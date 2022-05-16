@@ -19,6 +19,8 @@ public final class NetworkServiceImpl {
     }
 }
 
+// MARK: - NetworkService
+
 extension NetworkServiceImpl: NetworkService {
     public func request(endpoint: Requestable, completion: @escaping CompletionHandler) -> NetworkCancellable? {
         do {
@@ -30,6 +32,8 @@ extension NetworkServiceImpl: NetworkService {
         }
     }
 }
+
+// MARK: - Private
 
 private extension NetworkServiceImpl {
     func request(request: URLRequest, completion: @escaping CompletionHandler) -> NetworkCancellable {
