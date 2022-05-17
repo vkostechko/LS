@@ -12,8 +12,7 @@ public final class NetworkServiceImpl {
     private let config: NetworkConfigurable
     private let sessionManager: NetworkSessionManager
 
-    public init(config: NetworkConfigurable,
-                sessionManager: NetworkSessionManager) {
+    public init(config: NetworkConfigurable, sessionManager: NetworkSessionManager) {
         self.config = config
         self.sessionManager = sessionManager
     }
@@ -22,10 +21,12 @@ public final class NetworkServiceImpl {
 // MARK: - NetworkService
 
 extension NetworkServiceImpl: NetworkService {
-    public func request(endpoint: Requestable, completion: @escaping CompletionHandler) -> NetworkCancellable? {
+    public func request(endpoint: Requestable,
+                        completion: @escaping CompletionHandler) -> NetworkCancellable? {
         do {
             let urlRequest = try endpoint.urlRequest(with: config)
             return request(request: urlRequest, completion: completion)
+
         } catch {
             completion(.failure(.urlGeneration))
             return nil
@@ -36,6 +37,7 @@ extension NetworkServiceImpl: NetworkService {
 // MARK: - Private
 
 private extension NetworkServiceImpl {
+    
     func request(request: URLRequest, completion: @escaping CompletionHandler) -> NetworkCancellable {
         let sessionDataTask = sessionManager.request(request) { data, response, requestError in
             if let requestError = requestError {

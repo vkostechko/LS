@@ -10,7 +10,6 @@ import Foundation
 public struct NetworkConfig {
     public let baseURL: URL
     public let headers: [String: String]
-    public let queryParameters: [String: String]
 }
 
 extension NetworkConfig: NetworkConfigurable {}

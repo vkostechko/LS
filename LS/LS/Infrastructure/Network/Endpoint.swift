@@ -7,34 +7,23 @@
 
 import Foundation
 
-public final class Endpoint<R> {
-    public var responseDecoder: ResponseDecoder
+public final class Endpoint<R>: ResponseRequestable {
 
     public typealias Response = R
 
     public let path: String
     public let method: HTTPMethodType
-    public let headerParamaters: [String: String]
-    public let queryParameters: [String: Any]
-
+    public let queryParametersEncodable: Encodable?
+    
+    public let responseDecoder: ResponseDecoder
+    
     init(path: String,
          method: HTTPMethodType,
-         headerParamaters: [String: String] = [:],
-         queryParameters: [String: Any] = [:],
-         responseDecoder: ResponseDecoder) {
+         queryParametersEncodable: Encodable?,
+         responseDecoder: ResponseDecoder = JSONResponseDecoder()) {
         self.path = path
         self.method = method
-        self.headerParamaters = headerParamaters
-        self.queryParameters = queryParameters
+        self.queryParametersEncodable = queryParametersEncodable
         self.responseDecoder = responseDecoder
-    }
-}
-
-extension Endpoint: ResponseRequestable {
-    public func urlRequest(with networkConfig: NetworkConfigurable) throws -> URLRequest {
-        guard let url = URL(string: path) else {
-            throw NetworkError.urlGeneration
-        }
-        return URLRequest(url: url)
     }
 }
