@@ -20,7 +20,8 @@ class ViewController: UIViewController {
                                           headers: ["Authorization": "23863708:465c0554fd00da006338c72e282e939fe6576a25fd00c776c0fbe898c47c9876"])
 
         networkService = NetworkServiceImpl(config: networkConfig,
-                                            sessionManager: NetworkSessionManagerImpl())
+                                            sessionManager: NetworkSessionManagerImpl(),
+                                            logger: NetworkLoggerImpl())
         dataTransferServie = DataTransferServiceImpl(with: networkService)
     }
 

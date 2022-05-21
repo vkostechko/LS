@@ -11,10 +11,12 @@ public final class NetworkServiceImpl {
 
     private let config: NetworkConfigurable
     private let sessionManager: NetworkSessionManager
+    private let logger: NetworkLogger
 
-    public init(config: NetworkConfigurable, sessionManager: NetworkSessionManager) {
+    public init(config: NetworkConfigurable, sessionManager: NetworkSessionManager, logger: NetworkLogger) {
         self.config = config
         self.sessionManager = sessionManager
+        self.logger = logger
     }
 }
 
@@ -39,7 +41,9 @@ extension NetworkServiceImpl: NetworkService {
 private extension NetworkServiceImpl {
     
     func request(request: URLRequest, completion: @escaping CompletionHandler) -> NetworkCancellable {
-        let sessionDataTask = sessionManager.request(request) { data, response, requestError in
+        let sessionDataTask = sessionManager.request(request) { [weak self] data, response, requestError in
+            guard let self = self else { return }
+
             if let requestError = requestError {
                 var error: NetworkError
                 if let response = response as? HTTPURLResponse {
@@ -48,11 +52,16 @@ private extension NetworkServiceImpl {
                     error = requestError.toNetworkError()
                 }
 
+                self.logger.log(error: error)
                 completion(.failure(error))
+
             } else {
+                self.logger.log(responseData: data, response: response)
                 completion(.success(data))
             }
         }
+
+        logger.log(request: request)
 
         return sessionDataTask
     }
