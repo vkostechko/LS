@@ -13,8 +13,8 @@
 		2F065E17283971E100EC5870 /* FoodProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F065E16283971E100EC5870 /* FoodProduct.swift */; };
 		2F065E19283973D900EC5870 /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F065E18283973D900EC5870 /* Cancellable.swift */; };
 		2F065E1C283974B500EC5870 /* FoodProductRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F065E1B283974B500EC5870 /* FoodProductRepositoryImpl.swift */; };
-		2F065E2028397AD400EC5870 /* AppAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F065E1F28397AD400EC5870 /* AppAssembly.swift */; };
 		2F065E2328397B5C00EC5870 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F065E2228397B5C00EC5870 /* AppConfiguration.swift */; };
+		2F065E262839825900EC5870 /* AppAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F065E252839825900EC5870 /* AppAssembly.swift */; };
 		2F7E7B1928313FE50063C0A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7E7B1828313FE50063C0A9 /* AppDelegate.swift */; };
 		2F7E7B1B28313FE50063C0A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7E7B1A28313FE50063C0A9 /* SceneDelegate.swift */; };
 		2F7E7B1D28313FE50063C0A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7E7B1C28313FE50063C0A9 /* ViewController.swift */; };
@@ -44,8 +44,8 @@
 		2F065E16283971E100EC5870 /* FoodProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodProduct.swift; sourceTree = "<group>"; };
 		2F065E18283973D900EC5870 /* Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
 		2F065E1B283974B500EC5870 /* FoodProductRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodProductRepositoryImpl.swift; sourceTree = "<group>"; };
-		2F065E1F28397AD400EC5870 /* AppAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssembly.swift; sourceTree = "<group>"; };
 		2F065E2228397B5C00EC5870 /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
+		2F065E252839825900EC5870 /* AppAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAssembly.swift; sourceTree = "<group>"; };
 		2F7E7B1528313FE50063C0A9 /* LS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F7E7B1828313FE50063C0A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F7E7B1A28313FE50063C0A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,10 +113,10 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
-		2F065E2128397B4D00EC5870 /* Assembly */ = {
+		2F065E242839825900EC5870 /* Assembly */ = {
 			isa = PBXGroup;
 			children = (
-				2F065E1F28397AD400EC5870 /* AppAssembly.swift */,
+				2F065E252839825900EC5870 /* AppAssembly.swift */,
 			);
 			path = Assembly;
 			sourceTree = "<group>";
@@ -157,7 +157,7 @@
 				2F7E7B1A28313FE50063C0A9 /* SceneDelegate.swift */,
 				2F7E7B1828313FE50063C0A9 /* AppDelegate.swift */,
 				2F065E2228397B5C00EC5870 /* AppConfiguration.swift */,
-				2F065E2128397B4D00EC5870 /* Assembly */,
+				2F065E242839825900EC5870 /* Assembly */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -343,7 +343,6 @@
 				2F065E0E283969DC00EC5870 /* NetworkLoggerImpl.swift in Sources */,
 				2F7E7B3B2831486F0063C0A9 /* NetworkConfigurable.swift in Sources */,
 				2F065E17283971E100EC5870 /* FoodProduct.swift in Sources */,
-				2F065E2028397AD400EC5870 /* AppAssembly.swift in Sources */,
 				2F7E7B57283302CA0063C0A9 /* FoodProductResponseDTO.swift in Sources */,
 				2F7E7B522833023D0063C0A9 /* APIEndpoints.swift in Sources */,
 				2F7E7B5D28330A3D0063C0A9 /* DataTransferServiceImpl.swift in Sources */,
@@ -355,6 +354,7 @@
 				2F7E7B592833063A0063C0A9 /* JSONResponseDecoder.swift in Sources */,
 				2F065E19283973D900EC5870 /* Cancellable.swift in Sources */,
 				2F7E7B39283148020063C0A9 /* Requestable.swift in Sources */,
+				2F065E262839825900EC5870 /* AppAssembly.swift in Sources */,
 				2F065E0C2839690400EC5870 /* NetworkLogger.swift in Sources */,
 				2F7E7B5F28330EFF0063C0A9 /* NetworkSessionManagerImpl.swift in Sources */,
 			);
