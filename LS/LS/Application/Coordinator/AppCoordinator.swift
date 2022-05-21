@@ -10,12 +10,16 @@ import Foundation
 final class AppCoordinator {
 
     let appAssembly: AppAssembly
+    let appRouter: AppRouter
 
-    init(appAssembly: AppAssembly) {
+    init(appAssembly: AppAssembly, appRouter: AppRouter) {
         self.appAssembly = appAssembly
+        self.appRouter = appRouter
     }
 
     func start() {
-        // TODO: start the app
+        let productAssembly = appAssembly.makeFoodShakerAssembly()
+        let flow = productAssembly.makeFoodShakerCoordinator(router: appRouter)
+        flow.start()
     }
 }

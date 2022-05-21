@@ -9,9 +9,9 @@ import Foundation
 
 final class AppAssembly {
 
-    lazy private(set) var appConfiguration = AppConfiguration()
+    private(set) lazy var appConfiguration = AppConfiguration()
 
-    private(set) lazy var dataTransferServie: DataTransferService = {
+    private(set) lazy var dataTransferService: DataTransferService = {
         let config = NetworkConfig(baseURL: URL(string: appConfiguration.apiBaseURL)!,
                                    headers: ["Authorization": appConfiguration.authToken])
 
@@ -21,4 +21,9 @@ final class AppAssembly {
 
         return DataTransferServiceImpl(with: networkService)
     }()
+
+    func makeFoodShakerAssembly() -> FoodShakerAssembly {
+        let dependencies = FoodShakerAssembly.Dependencies(dataTransferService: dataTransferService)
+        return FoodShakerAssembly(dependencies: dependencies)
+    }
 }
