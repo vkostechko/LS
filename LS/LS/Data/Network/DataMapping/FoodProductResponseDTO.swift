@@ -49,3 +49,31 @@ struct FoodProductDTO: Decodable {
         case saturatedFat = "saturatedfat"
     }
 }
+
+// Domain
+
+extension FoodProductResponseDTO {
+    func toDomain() -> FoodProduct {
+        response.toDomain()
+    }
+}
+
+extension FoodProductDTO {
+
+    func toDomain() -> FoodProduct {
+        FoodProduct(title: title,
+                    pcsText: pcsText,
+                    carbs: carbs,
+                    fiber: fiber,
+                    potassium: potassium,
+                    sodium: sodium,
+                    calories: calories,
+                    fat: fat,
+                    sugar: sugar,
+                    gramsPerServing: gramsPerServing,
+                    cholesterol: cholesterol,
+                    protein: protein,
+                    unsaturatedFat: unsaturatedFat,
+                    saturatedFat: saturatedFat)
+    }
+}

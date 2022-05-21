@@ -14,7 +14,7 @@ public enum DataTransferError: Error {
     case resolvedNetworkFailure(Error)
 }
 
-protocol DataTransferService {
+public protocol DataTransferService {
     typealias CompletionHandler<T> = (Result<T, DataTransferError>) -> Void
 
     @discardableResult
