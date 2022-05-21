@@ -15,9 +15,7 @@ public enum NetworkError: Error {
     case urlGeneration
 }
 
-public protocol NetworkCancellable {
-    func cancel()
-}
+public protocol NetworkCancellable: Cancellable { }
 
 extension URLSessionTask: NetworkCancellable { }
 
