@@ -66,7 +66,30 @@ class FoodShakerViewController: UIViewController {
     // MARK: - Private
 
     private func prepareUI() {
+        var theme = AppTheme()
+
+        infoView.titleLabel.font = theme.titleFont
+        infoView.titleLabel.textColor = theme.titleTextColor
+
+        infoView.deviderView.backgroundColor = theme.deviderColor
+
+        [carbsInfoView, proteinInfoView, fatInfoView].forEach { infoView in
+            infoView?.titleLabel.font = theme.descriptionFont
+            infoView?.titleLabel.textColor = theme.descriptionTextColor
+
+            infoView?.subtitleLabel.font = theme.descriptionFont
+            infoView?.subtitleLabel.textColor = theme.descriptionTextColor
+
+            infoView?.deviderView.backgroundColor = theme.descriptionDeviderColor
+        }
+
         infoView.subtitleLabel.isHidden = true
+
+        caloriesLabel.font = theme.titleFont
+        caloriesLabel.textColor = theme.titleTextColor
+
+        caloriesSubtitleLabel.font = theme.subTitleFont
+        caloriesSubtitleLabel.textColor = theme.subTitleTextColor
     }
 
     private func updateSubviewsLayout() {

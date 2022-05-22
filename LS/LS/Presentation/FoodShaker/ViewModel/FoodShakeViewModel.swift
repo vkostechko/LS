@@ -69,7 +69,6 @@ extension FoodShakeViewModel {
             defer {
                 self.loadingTask = nil
             }
-            // TODO: handle result
 
             switch result {
             case .success(let food):
@@ -85,6 +84,7 @@ extension FoodShakeViewModel {
 // MARK: - Private
 
 private extension FoodShakeViewModel {
+    
     func handle(error: Error) {
         self.error.value = error.localizedDescription
     }

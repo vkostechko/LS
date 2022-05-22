@@ -23,6 +23,9 @@ struct AppTheme {
         case peach
         case turkuoise
         case lagoon
+        case zircon
+        case white
+        case darkGray
 
         var color: UIColor {
             switch self {
@@ -61,6 +64,15 @@ struct AppTheme {
 
             case .lagoon:
                 return UIColor(named: "lagoon") ?? .systemCyan
+
+            case .zircon:
+                return UIColor(named: "zircon") ?? .lightGray
+
+            case .white:
+                return UIColor(named: "white") ?? .white
+
+            case .darkGray:
+                return UIColor(named: "darkGray") ?? .darkGray
             }
         }
     }
@@ -96,10 +108,34 @@ struct AppTheme {
         }
     }
 
-    struct Fonts {
+    enum Fonts {
+        static func large() -> UIFont {
+            font(of: 25.0)
+        }
 
+        static func medium() -> UIFont {
+            font(of: 20.0)
+        }
+
+        static func small() -> UIFont {
+            font(of: 16.0)
+        }
+
+        private static func font(of size: CGFloat) -> UIFont {
+            UIFont.systemFont(ofSize: size)
+        }
     }
 
+    lazy var deviderColor: UIColor = { AppColors.white.color }()
 
+    lazy var titleFont: UIFont = { Fonts.large() }()
+    lazy var subTitleFont: UIFont = { Fonts.medium() }()
+    lazy var descriptionFont: UIFont = { Fonts.small() }()
+
+    lazy var titleTextColor: UIColor = { AppColors.white.color }()
+    lazy var subTitleTextColor: UIColor = { AppColors.white.color }()
+    lazy var descriptionTextColor: UIColor = { AppColors.darkGray.color }()
+
+    lazy var descriptionDeviderColor: UIColor = { AppColors.zircon.color }()
 
 }
