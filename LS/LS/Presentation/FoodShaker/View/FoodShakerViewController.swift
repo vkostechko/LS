@@ -70,6 +70,7 @@ class FoodShakerViewController: UIViewController {
 
         infoView.titleLabel.font = theme.titleFont
         infoView.titleLabel.textColor = theme.titleTextColor
+        infoView.spacing = 6.0
 
         infoView.deviderView.backgroundColor = theme.deviderColor
 

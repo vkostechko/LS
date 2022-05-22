@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InfoView" customModule="LS" customModuleProvider="target">
             <connections>
+                <outlet property="contentView" destination="c3j-ig-W6f" id="74A-HX-QNp"/>
                 <outlet property="deviderView" destination="JxX-5Q-neT" id="AZc-ji-Xh9"/>
                 <outlet property="subtitleLabel" destination="zgV-TU-L10" id="Fqz-kL-Z5R"/>
                 <outlet property="titleLabel" destination="aao-pU-avb" id="KMK-Im-ii5"/>
