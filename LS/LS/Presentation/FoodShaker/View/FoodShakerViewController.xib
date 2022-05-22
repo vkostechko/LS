@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FoodShakerViewController" customModule="LS" customModuleProvider="target">
             <connections>
+                <outlet property="tipLabel" destination="Tuj-gI-CtN" id="rLR-P2-WbL"/>
                 <outlet property="view" destination="iN0-l3-epB" id="4ff-OT-0N5"/>
             </connections>
         </placeholder>
@@ -25,10 +26,19 @@
                         <action selector="shakeButtonDidTap:" destination="-1" eventType="touchUpInside" id="zHN-0V-jko"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shake the device to get a product" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tuj-gI-CtN">
+                    <rect key="frame" x="20" y="791.5" width="374" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Tuj-gI-CtN" secondAttribute="bottom" constant="50" id="KOz-cT-vHd"/>
                 <constraint firstItem="exM-bP-iLg" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Lde-BF-Lbf"/>
+                <constraint firstItem="Tuj-gI-CtN" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="WFP-Yv-2gB"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Tuj-gI-CtN" secondAttribute="trailing" constant="20" id="fVJ-dH-0BA"/>
                 <constraint firstItem="exM-bP-iLg" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="sur-bd-O0N"/>
             </constraints>
             <point key="canvasLocation" x="139" y="76"/>

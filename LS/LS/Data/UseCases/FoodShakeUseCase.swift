@@ -8,7 +8,8 @@
 import Foundation
 
 protocol FoodShakeUseCase {
-    func getRandomProduct(completion: @escaping (Result<FoodProduct, Error>) -> Void)
+    @discardableResult
+    func getRandomProduct(completion: @escaping (Result<FoodProduct, Error>) -> Void) -> Cancellable?
 }
 
 final class ShakeProductUseCaseImpl {
@@ -21,8 +22,9 @@ final class ShakeProductUseCaseImpl {
 
 extension ShakeProductUseCaseImpl: FoodShakeUseCase {
 
-    func getRandomProduct(completion: @escaping (Result<FoodProduct, Error>) -> Void) {
+    @discardableResult
+    func getRandomProduct(completion: @escaping (Result<FoodProduct, Error>) -> Void) -> Cancellable? {
         let productId = ProductId.random(in: 1...10)
-        repository.fetchProduct(id: productId, completion: completion)
+        return repository.fetchProduct(id: productId, completion: completion)
     }
 }
