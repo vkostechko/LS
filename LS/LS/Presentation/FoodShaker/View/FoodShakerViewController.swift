@@ -59,8 +59,12 @@ class FoodShakerViewController: UIViewController {
             self?.showError(error)
         }
     }
+}
 
-    private func updateTip(status: FoodShakeViewModel.TipStatus?) {
+// MARK: - Tip
+
+private extension FoodShakerViewController {
+    func updateTip(status: FoodShakeViewModel.TipStatus?) {
         guard let status = status else { return }
 
         switch status {
@@ -72,15 +76,20 @@ class FoodShakerViewController: UIViewController {
         }
     }
 
-    private func animateTip() {
+    func animateTip() {
         tipView.shake()
     }
 
-    private func hideTip() {
+    func hideTip() {
         tipView.disappear()
     }
+}
 
-    private func showError(_ error: String?) {
+// MARK: - Error
 
+private extension FoodShakerViewController {
+
+    func showError(_ error: String?) {
+        showError(message: error)
     }
 }

@@ -9,7 +9,7 @@ import Foundation
 
 final class FoodShakeViewModel {
 
-    let tip = NSLocalizedString("shake.tip", comment: "")
+    let tip = L10n("tip.shake")
     var tipStatus: Observable<TipStatus?> = Observable(nil)
     var error: Observable<String?> = Observable(nil)
 

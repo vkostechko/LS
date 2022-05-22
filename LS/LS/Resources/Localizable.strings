@@ -6,4 +6,7 @@
   
 */
 
-"shake.tip" = "Shake the device to get a product";
+"tip.shake" = "Shake the device to get a product";
+
+"alert.error" = "Error";
+"alert.ok" = "Ok";
