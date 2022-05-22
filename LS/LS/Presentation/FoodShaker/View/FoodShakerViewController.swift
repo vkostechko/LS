@@ -94,12 +94,16 @@ class FoodShakerViewController: UIViewController {
         moreButton.titleLabel?.font = theme.titleFont
         moreButton.tintColor = theme.titleTextColor
         moreButton.applyGradient(colors: theme.buttonGradient)
-        moreButton.roundCorners()
+
+        tipLabel.font = theme.subTitleFont
+        tipLabel.textColor = theme.tipTextColor
+        tipView.backgroundColor = theme.tipBackgroundColor
     }
 
     private func updateSubviewsLayout() {
         tipView.roundCorners()
         mainInfoContainerView.roundCorners()
+        moreButton.roundCorners()
     }
 
     private func bind(to viewModel: FoodShakeViewModel) {

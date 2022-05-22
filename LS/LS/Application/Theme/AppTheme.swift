@@ -147,4 +147,7 @@ struct AppTheme {
     lazy var descriptionDeviderColor: UIColor = { AppColors.zircon.color }()
 
     lazy var buttonGradient: [UIColor] = { [AppColors.blackTop.color, AppColors.blackTop.color] }()
+
+    lazy var tipTextColor: UIColor = { AppColors.blackTop.color }()
+    lazy var tipBackgroundColor: UIColor = { AppColors.zircon.color }()
 }
