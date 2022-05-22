@@ -9,6 +9,7 @@ import UIKit
 
 class FoodShakerViewController: UIViewController {
 
+    @IBOutlet weak var tipView: UIView!
     @IBOutlet weak var tipLabel: UILabel!
 
     var viewModel: FoodShakeViewModel!
@@ -27,6 +28,12 @@ class FoodShakerViewController: UIViewController {
         viewModel.viewDidAppear()
     }
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        updateSubviewsLayout()
+    }
+
     // MARK: - Actions
 
     @IBAction func shakeButtonDidTap(_ sender: Any) {
@@ -37,6 +44,10 @@ class FoodShakerViewController: UIViewController {
 
     private func prepareUI() {
         tipLabel.text = viewModel.tip
+    }
+
+    private func updateSubviewsLayout() {
+        tipView.roundCorners()
     }
 
     private func bind(to viewModel: FoodShakeViewModel) {
@@ -62,11 +73,11 @@ class FoodShakerViewController: UIViewController {
     }
 
     private func animateTip() {
-
+        tipView.shake()
     }
 
     private func hideTip() {
-
+        tipView.disappear()
     }
 
     private func showError(_ error: String?) {
