@@ -90,6 +90,11 @@ class FoodShakerViewController: UIViewController {
 
         caloriesSubtitleLabel.font = theme.subTitleFont
         caloriesSubtitleLabel.textColor = theme.subTitleTextColor
+
+        moreButton.titleLabel?.font = theme.titleFont
+        moreButton.tintColor = theme.titleTextColor
+        moreButton.applyGradient(colors: theme.buttonGradient)
+        moreButton.roundCorners()
     }
 
     private func updateSubviewsLayout() {
@@ -105,6 +110,8 @@ class FoodShakerViewController: UIViewController {
         carbsInfoView.titleLabel.text = viewModel.carbsTitle
         proteinInfoView.titleLabel.text = viewModel.proteinTitle
         fatInfoView.titleLabel.text = viewModel.fatTitle
+
+        moreButton.setTitle(viewModel.moreButtonTitle, for: .normal)
 
         viewModel.tipStatus.observe(on: self) { [weak self] status in
             self?.updateTip(status: status)

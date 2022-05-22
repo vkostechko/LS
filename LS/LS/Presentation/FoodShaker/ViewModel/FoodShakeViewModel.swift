@@ -35,6 +35,8 @@ final class FoodShakeViewModel {
 
     var colors: Observable<[UIColor]?> = Observable(nil)
 
+    let moreButtonTitle = L10n("button.moreInfo")
+
     private var food: FoodProduct? {
         didSet {
             triggerUpdate()

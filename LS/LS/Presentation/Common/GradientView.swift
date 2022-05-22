@@ -19,19 +19,8 @@ class GradientView: UIView {
 
     private func updateGradient() {
         gradientLayer?.removeFromSuperlayer()
-
-        guard let colors = colors else {
-            return
-        }
-
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = colors.compactMap { $0.cgColor }
-        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
-        gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
-        gradientLayer.frame = bounds
-
-        layer.insertSublayer(gradientLayer, at:0)
-
-        self.gradientLayer = gradientLayer
+        gradientLayer = applyGradient(colors: colors,
+                                      startPoint: CGPoint(x: 0, y: 0),
+                                      endPoint: CGPoint(x: 0.5, y: 1))
     }
 }

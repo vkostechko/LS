@@ -26,6 +26,8 @@ struct AppTheme {
         case zircon
         case white
         case darkGray
+        case blackTop
+        case blackBottom
 
         var color: UIColor {
             switch self {
@@ -73,6 +75,12 @@ struct AppTheme {
 
             case .darkGray:
                 return UIColor(named: "darkGray") ?? .darkGray
+
+            case .blackTop:
+                return UIColor(named: "blackTop") ?? .black
+
+            case .blackBottom:
+                return UIColor(named: "blackBottom") ?? .black
             }
         }
     }
@@ -138,4 +146,5 @@ struct AppTheme {
 
     lazy var descriptionDeviderColor: UIColor = { AppColors.zircon.color }()
 
+    lazy var buttonGradient: [UIColor] = { [AppColors.blackTop.color, AppColors.blackTop.color] }()
 }
