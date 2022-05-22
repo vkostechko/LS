@@ -51,7 +51,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="04c-Nu-7kk">
                     <rect key="frame" x="20" y="146.5" width="374" height="603"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nFj-ki-BMa">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nFj-ki-BMa" customClass="GradientView" customModule="LS" customModuleProvider="target">
                             <rect key="frame" x="51" y="76" width="272" height="272"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bMi-e9-rin" customClass="InfoView" customModule="LS" customModuleProvider="target">

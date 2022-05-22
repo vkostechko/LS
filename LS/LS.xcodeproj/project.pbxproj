@@ -32,6 +32,9 @@
 		2F065E56283AB7EC00EC5870 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F065E55283AB7EC00EC5870 /* InfoView.swift */; };
 		2F065E59283AB7F900EC5870 /* InfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F065E58283AB7F900EC5870 /* InfoView.xib */; };
 		2F065E5B283ABD5000EC5870 /* NibDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F065E5A283ABD5000EC5870 /* NibDesignable.swift */; };
+		2F065E5F283AE3DD00EC5870 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F065E5E283AE3DD00EC5870 /* GradientView.swift */; };
+		2F065E62283AE60200EC5870 /* AppAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F065E61283AE60200EC5870 /* AppAppearance.swift */; };
+		2F065E64283AE63800EC5870 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F065E63283AE63800EC5870 /* AppTheme.swift */; };
 		2F7E7B1928313FE50063C0A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7E7B1828313FE50063C0A9 /* AppDelegate.swift */; };
 		2F7E7B2228313FE80063C0A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F7E7B2128313FE80063C0A9 /* Assets.xcassets */; };
 		2F7E7B2528313FE80063C0A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F7E7B2328313FE80063C0A9 /* LaunchScreen.storyboard */; };
@@ -77,6 +80,9 @@
 		2F065E55283AB7EC00EC5870 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		2F065E58283AB7F900EC5870 /* InfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoView.xib; sourceTree = "<group>"; };
 		2F065E5A283ABD5000EC5870 /* NibDesignable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibDesignable.swift; sourceTree = "<group>"; };
+		2F065E5E283AE3DD00EC5870 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		2F065E61283AE60200EC5870 /* AppAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAppearance.swift; sourceTree = "<group>"; };
+		2F065E63283AE63800EC5870 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		2F7E7B1528313FE50063C0A9 /* LS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F7E7B1828313FE50063C0A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F7E7B2128313FE80063C0A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -258,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				2F065E5A283ABD5000EC5870 /* NibDesignable.swift */,
+				2F065E5E283AE3DD00EC5870 /* GradientView.swift */,
 				2F065E57283AB7F200EC5870 /* InfoView */,
 			);
 			path = Common;
@@ -270,6 +277,15 @@
 				2F065E58283AB7F900EC5870 /* InfoView.xib */,
 			);
 			path = InfoView;
+			sourceTree = "<group>";
+		};
+		2F065E60283AE5E300EC5870 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				2F065E61283AE60200EC5870 /* AppAppearance.swift */,
+				2F065E63283AE63800EC5870 /* AppTheme.swift */,
+			);
+			path = Theme;
 			sourceTree = "<group>";
 		};
 		2F7E7B0C28313FE50063C0A9 = {
@@ -306,6 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				2F7E7B1828313FE50063C0A9 /* AppDelegate.swift */,
+				2F065E60283AE5E300EC5870 /* Theme */,
 				2F065E35283995B600EC5870 /* Routing */,
 				2F065E2D283991B900EC5870 /* Configuration */,
 				2F065E27283983E200EC5870 /* Coordinator */,
@@ -488,8 +505,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F065E5F283AE3DD00EC5870 /* GradientView.swift in Sources */,
 				2F7E7B5B283309C60063C0A9 /* DataTransferService.swift in Sources */,
 				2F065E5B283ABD5000EC5870 /* NibDesignable.swift in Sources */,
+				2F065E62283AE60200EC5870 /* AppAppearance.swift in Sources */,
 				2F065E462839B27900EC5870 /* FoodShakeViewModel.swift in Sources */,
 				2F7E7B552833027E0063C0A9 /* FoodProductRequestDTO.swift in Sources */,
 				2F065E51283A826800EC5870 /* UIViewController+Alert.swift in Sources */,
@@ -515,6 +534,7 @@
 				2F7E7B37283145520063C0A9 /* NetworkService.swift in Sources */,
 				2F7E7B40283151110063C0A9 /* NetworkConfig.swift in Sources */,
 				2F065E2328397B5C00EC5870 /* AppConfiguration.swift in Sources */,
+				2F065E64283AE63800EC5870 /* AppTheme.swift in Sources */,
 				2F7E7B592833063A0063C0A9 /* JSONResponseDecoder.swift in Sources */,
 				2F065E19283973D900EC5870 /* Cancellable.swift in Sources */,
 				2F065E4C283A7B6400EC5870 /* UIView+Layer.swift in Sources */,

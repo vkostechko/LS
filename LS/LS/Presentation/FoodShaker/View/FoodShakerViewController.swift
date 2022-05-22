@@ -13,7 +13,7 @@ class FoodShakerViewController: UIViewController {
     @IBOutlet private weak var tipLabel: UILabel!
 
     @IBOutlet private weak var foodCardView: UIView!
-    @IBOutlet private weak var mainInfoContainerView: UIView!
+    @IBOutlet private weak var mainInfoContainerView: GradientView!
     @IBOutlet private weak var infoView: InfoView!
     @IBOutlet private weak var caloriesLabel: UILabel!
     @IBOutlet private weak var caloriesSubtitleLabel: UILabel!
@@ -113,6 +113,10 @@ class FoodShakerViewController: UIViewController {
 
         viewModel.fat.observe(on: self) { [weak self] value in
             self?.fatInfoView.subtitleLabel.text = value
+        }
+
+        viewModel.colors.observe(on: self) { [weak self] colors in
+            self?.mainInfoContainerView.colors = colors
         }
     }
 }

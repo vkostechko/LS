@@ -5,7 +5,7 @@
 //  Created by Viachaslau Kastsechka on 5/22/22.
 //
 
-import Foundation
+import UIKit
 
 final class FoodShakeViewModel {
 
@@ -32,6 +32,8 @@ final class FoodShakeViewModel {
     var carbs: Observable<String?> = Observable(nil)
     var protein: Observable<String?> = Observable(nil)
     var fat: Observable<String?> = Observable(nil)
+
+    var colors: Observable<[UIColor]?> = Observable(nil)
 
     private var food: FoodProduct? {
         didSet {
@@ -100,6 +102,13 @@ private extension FoodShakeViewModel {
         carbs.value = food.carbs.stringValue
         protein.value = food.protein.stringValue
         fat.value = food.fat.stringValue
+
+        colors.value = getRandomGradient()
+    }
+
+    func getRandomGradient() -> [UIColor] {
+        let id = Int.random(in: 0..<AppTheme.Gradient.allCases.count)
+        return AppTheme.Gradient.allCases[id].colors
     }
 }
 
