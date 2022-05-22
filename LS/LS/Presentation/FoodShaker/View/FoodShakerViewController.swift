@@ -9,8 +9,20 @@ import UIKit
 
 class FoodShakerViewController: UIViewController {
 
-    @IBOutlet weak var tipView: UIView!
-    @IBOutlet weak var tipLabel: UILabel!
+    @IBOutlet private weak var tipView: UIView!
+    @IBOutlet private weak var tipLabel: UILabel!
+
+    @IBOutlet private weak var foodCardView: UIView!
+    @IBOutlet private weak var mainInfoContainerView: UIView!
+    @IBOutlet private weak var infoView: InfoView!
+    @IBOutlet private weak var caloriesLabel: UILabel!
+    @IBOutlet private weak var caloriesSubtitleLabel: UILabel!
+
+    @IBOutlet private weak var carbsInfoView: InfoView!
+    @IBOutlet private weak var proteinInfoView: InfoView!
+    @IBOutlet private weak var fatInfoView: InfoView!
+
+    @IBOutlet weak var moreButton: UIButton!
 
     var viewModel: FoodShakeViewModel!
 
@@ -36,27 +48,40 @@ class FoodShakerViewController: UIViewController {
 
     // MARK: - Actions
 
-    @IBAction func shakeButtonDidTap(_ sender: Any) {
-        viewModel.didShakeDevice()
+    @IBAction func moreButtonDidTap(_ sender: Any) {
+
     }
 
     // MARK: - Private
 
     private func prepareUI() {
-        tipLabel.text = viewModel.tip
+
     }
 
     private func updateSubviewsLayout() {
         tipView.roundCorners()
+        mainInfoContainerView.roundCorners()
     }
 
     private func bind(to viewModel: FoodShakeViewModel) {
+        tipLabel.text = viewModel.tip
+
+        caloriesSubtitleLabel.text = viewModel.caloriesSubtitle
+
+        carbsInfoView.titleLabel.text = viewModel.carbsTitle
+        proteinInfoView.titleLabel.text = viewModel.proteinTitle
+        fatInfoView.titleLabel.text = viewModel.fatTitle
+
         viewModel.tipStatus.observe(on: self) { [weak self] status in
             self?.updateTip(status: status)
         }
 
         viewModel.error.observe(on: self) { [weak self] error in
-            self?.showError(error)
+            self?.handle(error: error)
+        }
+
+        viewModel.isDataLoaded.observe(on: self) { [weak self] loaded in
+            //self?.foodCardView.isHidden = !loaded
         }
     }
 }
@@ -88,6 +113,13 @@ private extension FoodShakerViewController {
 // MARK: - Error
 
 private extension FoodShakerViewController {
+
+    func handle(error: String?) {
+        guard let error = error else {
+            return
+        }
+        showError(error)
+    }
 
     func showError(_ error: String?) {
         showError(message: error)

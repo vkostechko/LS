@@ -11,14 +11,29 @@ final class FoodShakeViewModel {
 
     let tip = L10n("tip.shake")
     var tipStatus: Observable<TipStatus?> = Observable(nil)
-    var error: Observable<String?> = Observable(nil)
-
     enum TipStatus {
         case animating
         case hidden
     }
 
-    private var food: FoodProduct?
+    var error: Observable<String?> = Observable(nil)
+
+    var isDataLoaded: Observable<Bool> = Observable(false)
+
+    let caloriesSubtitle = L10n("food.caloriesPerSaving")
+
+    let carbsTitle = L10n("food.carbs").uppercased()
+    let proteinTitle = L10n("food.protein").uppercased()
+    let fatTitle = L10n("food.fat").uppercased()
+
+
+
+
+    private var food: FoodProduct? {
+        didSet {
+            isDataLoaded.value = food != nil
+        }
+    }
     private var loadingTask: Cancellable? {
         willSet {
             loadingTask?.cancel()

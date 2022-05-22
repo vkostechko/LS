@@ -10,3 +10,9 @@
 
 "alert.error" = "Error";
 "alert.ok" = "Ok";
+
+"food.carbs" = "carbs";
+"food.protein" = "protein";
+"food.fat" = "fat";
+
+"food.caloriesPerSaving" = "Calories per saving";
