@@ -7,8 +7,9 @@
 
 import Foundation
 
+typealias ProductId = Int
+
 protocol FoodProductRepository {
-    typealias ProductId = Int
 
     @discardableResult
     func fetchProduct(id: ProductId,
