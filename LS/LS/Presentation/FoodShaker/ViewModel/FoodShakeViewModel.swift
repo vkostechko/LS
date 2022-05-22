@@ -26,14 +26,19 @@ final class FoodShakeViewModel {
     let proteinTitle = L10n("food.protein").uppercased()
     let fatTitle = L10n("food.fat").uppercased()
 
+    var foodName: Observable<String?> = Observable(nil)
 
-
+    var calories: Observable<String?> = Observable(nil)
+    var carbs: Observable<String?> = Observable(nil)
+    var protein: Observable<String?> = Observable(nil)
+    var fat: Observable<String?> = Observable(nil)
 
     private var food: FoodProduct? {
         didSet {
-            isDataLoaded.value = food != nil
+            triggerUpdate()
         }
     }
+
     private var loadingTask: Cancellable? {
         willSet {
             loadingTask?.cancel()
@@ -80,5 +85,28 @@ extension FoodShakeViewModel {
 private extension FoodShakeViewModel {
     func handle(error: Error) {
         self.error.value = error.localizedDescription
+    }
+
+    func triggerUpdate() {
+        defer {
+            isDataLoaded.value = food != nil
+        }
+
+        guard let food = food else { return }
+
+        foodName.value = food.title
+
+        calories.value = food.calories.stringValue
+        carbs.value = food.carbs.stringValue
+        protein.value = food.protein.stringValue
+        fat.value = food.fat.stringValue
+    }
+}
+
+// MARK: - Double to string
+
+extension Double {
+    var stringValue: String? {
+        String(self)
     }
 }

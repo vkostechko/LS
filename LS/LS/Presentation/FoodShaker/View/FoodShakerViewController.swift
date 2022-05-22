@@ -22,7 +22,7 @@ class FoodShakerViewController: UIViewController {
     @IBOutlet private weak var proteinInfoView: InfoView!
     @IBOutlet private weak var fatInfoView: InfoView!
 
-    @IBOutlet weak var moreButton: UIButton!
+    @IBOutlet private weak var moreButton: UIButton!
 
     var viewModel: FoodShakeViewModel!
 
@@ -46,6 +46,17 @@ class FoodShakerViewController: UIViewController {
         updateSubviewsLayout()
     }
 
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        super.motionEnded(motion, with: event)
+
+        switch motion {
+        case .motionShake:
+            viewModel.didShakeDevice()
+
+        default: break
+        }
+    }
+
     // MARK: - Actions
 
     @IBAction func moreButtonDidTap(_ sender: Any) {
@@ -55,7 +66,7 @@ class FoodShakerViewController: UIViewController {
     // MARK: - Private
 
     private func prepareUI() {
-
+        infoView.subtitleLabel.isHidden = true
     }
 
     private func updateSubviewsLayout() {
@@ -81,7 +92,27 @@ class FoodShakerViewController: UIViewController {
         }
 
         viewModel.isDataLoaded.observe(on: self) { [weak self] loaded in
-            //self?.foodCardView.isHidden = !loaded
+            self?.foodCardView.isHidden = !loaded
+        }
+
+        viewModel.foodName.observe(on: self) { [weak self] value in
+            self?.infoView.titleLabel.text = value
+        }
+
+        viewModel.calories.observe(on: self) { [weak self] value in
+            self?.caloriesLabel.text = value
+        }
+
+        viewModel.carbs.observe(on: self) { [weak self] value in
+            self?.carbsInfoView.subtitleLabel.text = value
+        }
+
+        viewModel.protein.observe(on: self) { [weak self] value in
+            self?.proteinInfoView.subtitleLabel.text = value
+        }
+
+        viewModel.fat.observe(on: self) { [weak self] value in
+            self?.fatInfoView.subtitleLabel.text = value
         }
     }
 }
