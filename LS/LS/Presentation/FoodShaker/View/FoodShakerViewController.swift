@@ -11,13 +11,15 @@ class FoodShakerViewController: UIViewController {
 
     var viewModel: FoodShakeViewModel!
 
+    // MARK: - Lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
+    // MARK: - Actions
+
     @IBAction func shakeButtonDidTap(_ sender: Any) {
-        viewModel.useCase.getRandomProduct { result in
-            print("did finish")
-        }
+        viewModel.didShakeDevice()
     }
 }

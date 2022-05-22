@@ -9,9 +9,23 @@ import Foundation
 
 final class FoodShakeViewModel {
 
-    let useCase: FoodShakeUseCase
+    private let useCase: FoodShakeUseCase
 
     init(useCase: FoodShakeUseCase) {
         self.useCase = useCase
     }
 }
+
+// MARK: - Actions
+
+extension FoodShakeViewModel {
+
+    func didShakeDevice() {
+        useCase.getRandomProduct { [weak self] result in
+            guard let self = self else { return }
+            // TODO: handle result
+            print("did load product")
+        }
+    }
+}
+
