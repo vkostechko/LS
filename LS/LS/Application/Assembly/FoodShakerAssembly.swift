@@ -20,6 +20,20 @@ final class FoodShakerAssembly {
     }
 
     func makeFoodShakerCoordinator(router: AppRouter) -> FoodShakerCoordinator {
-        FoodShakerCoordinator(router: router)
+        FoodShakerCoordinator(router: router, dependencies: self)
+    }
+}
+
+// MARK: - FoodShakerCoordinatorDependencies
+
+extension FoodShakerAssembly: FoodShakerCoordinatorDependencies {
+    func makeFoodShakerViewController() -> FoodShakerViewController {
+        let vc = FoodShakerViewController.loadFromNib()
+
+        let repository = FoodProductRepositoryImpl(dataTransferService: dependencies.dataTransferService)
+        let useCase = ShakeProductUseCaseImpl(repository: repository)
+        vc.viewModel = FoodShakeViewModel(useCase: useCase)
+
+        return vc
     }
 }

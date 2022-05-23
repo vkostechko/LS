@@ -7,16 +7,22 @@
 
 import UIKit
 
+protocol FoodShakerCoordinatorDependencies  {
+    func makeFoodShakerViewController() -> FoodShakerViewController
+}
+
 final class FoodShakerCoordinator {
 
     let router: AppRouter
+    let dependencies: FoodShakerCoordinatorDependencies
 
-    init(router: AppRouter) {
+    init(router: AppRouter, dependencies: FoodShakerCoordinatorDependencies) {
         self.router = router
+        self.dependencies = dependencies
     }
 
     func start() {
-        let vc = FoodShakerViewController.loadFromNib()
+        let vc = dependencies.makeFoodShakerViewController()
         router.show(vc)
     }
 }

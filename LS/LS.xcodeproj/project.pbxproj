@@ -22,6 +22,20 @@
 		2F065E392839968E00EC5870 /* FoodShakerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F065E382839968E00EC5870 /* FoodShakerAssembly.swift */; };
 		2F065E3D2839A7B400EC5870 /* FoodShakerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F065E3C2839A7B400EC5870 /* FoodShakerViewController.xib */; };
 		2F065E402839A83900EC5870 /* UIViewController+NIb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F065E3F2839A83900EC5870 /* UIViewController+NIb.swift */; };
+		2F065E432839B0A200EC5870 /* FoodShakeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F065E422839B0A200EC5870 /* FoodShakeUseCase.swift */; };
+		2F065E462839B27900EC5870 /* FoodShakeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F065E452839B27900EC5870 /* FoodShakeViewModel.swift */; };
+		2F065E482839BBA000EC5870 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F065E472839BBA000EC5870 /* Observable.swift */; };
+		2F065E4A283A761D00EC5870 /* UIView+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F065E49283A761D00EC5870 /* UIView+Animations.swift */; };
+		2F065E4C283A7B6400EC5870 /* UIView+Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F065E4B283A7B6400EC5870 /* UIView+Layer.swift */; };
+		2F065E51283A826800EC5870 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F065E50283A826800EC5870 /* UIViewController+Alert.swift */; };
+		2F065E53283A83C700EC5870 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F065E52283A83C700EC5870 /* Localization.swift */; };
+		2F065E56283AB7EC00EC5870 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F065E55283AB7EC00EC5870 /* InfoView.swift */; };
+		2F065E59283AB7F900EC5870 /* InfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F065E58283AB7F900EC5870 /* InfoView.xib */; };
+		2F065E5B283ABD5000EC5870 /* NibDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F065E5A283ABD5000EC5870 /* NibDesignable.swift */; };
+		2F065E5F283AE3DD00EC5870 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F065E5E283AE3DD00EC5870 /* GradientView.swift */; };
+		2F065E62283AE60200EC5870 /* AppAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F065E61283AE60200EC5870 /* AppAppearance.swift */; };
+		2F065E64283AE63800EC5870 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F065E63283AE63800EC5870 /* AppTheme.swift */; };
+		2F065E66283AF6B400EC5870 /* UIView+Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F065E65283AF6B400EC5870 /* UIView+Gradient.swift */; };
 		2F7E7B1928313FE50063C0A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7E7B1828313FE50063C0A9 /* AppDelegate.swift */; };
 		2F7E7B2228313FE80063C0A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F7E7B2128313FE80063C0A9 /* Assets.xcassets */; };
 		2F7E7B2528313FE80063C0A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F7E7B2328313FE80063C0A9 /* LaunchScreen.storyboard */; };
@@ -57,6 +71,20 @@
 		2F065E382839968E00EC5870 /* FoodShakerAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodShakerAssembly.swift; sourceTree = "<group>"; };
 		2F065E3C2839A7B400EC5870 /* FoodShakerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodShakerViewController.xib; sourceTree = "<group>"; };
 		2F065E3F2839A83900EC5870 /* UIViewController+NIb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+NIb.swift"; sourceTree = "<group>"; };
+		2F065E422839B0A200EC5870 /* FoodShakeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodShakeUseCase.swift; sourceTree = "<group>"; };
+		2F065E452839B27900EC5870 /* FoodShakeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodShakeViewModel.swift; sourceTree = "<group>"; };
+		2F065E472839BBA000EC5870 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		2F065E49283A761D00EC5870 /* UIView+Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Animations.swift"; sourceTree = "<group>"; };
+		2F065E4B283A7B6400EC5870 /* UIView+Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layer.swift"; sourceTree = "<group>"; };
+		2F065E50283A826800EC5870 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		2F065E52283A83C700EC5870 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
+		2F065E55283AB7EC00EC5870 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		2F065E58283AB7F900EC5870 /* InfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoView.xib; sourceTree = "<group>"; };
+		2F065E5A283ABD5000EC5870 /* NibDesignable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibDesignable.swift; sourceTree = "<group>"; };
+		2F065E5E283AE3DD00EC5870 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		2F065E61283AE60200EC5870 /* AppAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAppearance.swift; sourceTree = "<group>"; };
+		2F065E63283AE63800EC5870 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		2F065E65283AF6B400EC5870 /* UIView+Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Gradient.swift"; sourceTree = "<group>"; };
 		2F7E7B1528313FE50063C0A9 /* LS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F7E7B1828313FE50063C0A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F7E7B2128313FE80063C0A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -149,6 +177,7 @@
 		2F065E302839952A00EC5870 /* FoodShaker */ = {
 			isa = PBXGroup;
 			children = (
+				2F065E442839B26E00EC5870 /* ViewModel */,
 				2F065E3B2839A75B00EC5870 /* View */,
 				2F065E3A2839A73500EC5870 /* Flow */,
 			);
@@ -183,9 +212,83 @@
 		2F065E3E2839A83000EC5870 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				2F065E3F2839A83900EC5870 /* UIViewController+NIb.swift */,
+				2F065E52283A83C700EC5870 /* Localization.swift */,
+				2F065E4D283A823700EC5870 /* Extensions */,
+				2F065E472839BBA000EC5870 /* Observable.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		2F065E412839B07C00EC5870 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				2F065E422839B0A200EC5870 /* FoodShakeUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		2F065E442839B26E00EC5870 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2F065E452839B27900EC5870 /* FoodShakeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2F065E4D283A823700EC5870 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2F065E4E283A824500EC5870 /* View */,
+				2F065E4F283A825700EC5870 /* ViewController */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2F065E4E283A824500EC5870 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2F065E49283A761D00EC5870 /* UIView+Animations.swift */,
+				2F065E4B283A7B6400EC5870 /* UIView+Layer.swift */,
+				2F065E65283AF6B400EC5870 /* UIView+Gradient.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2F065E4F283A825700EC5870 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2F065E3F2839A83900EC5870 /* UIViewController+NIb.swift */,
+				2F065E50283A826800EC5870 /* UIViewController+Alert.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		2F065E54283AB7CA00EC5870 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				2F065E5A283ABD5000EC5870 /* NibDesignable.swift */,
+				2F065E5E283AE3DD00EC5870 /* GradientView.swift */,
+				2F065E57283AB7F200EC5870 /* InfoView */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		2F065E57283AB7F200EC5870 /* InfoView */ = {
+			isa = PBXGroup;
+			children = (
+				2F065E55283AB7EC00EC5870 /* InfoView.swift */,
+				2F065E58283AB7F900EC5870 /* InfoView.xib */,
+			);
+			path = InfoView;
+			sourceTree = "<group>";
+		};
+		2F065E60283AE5E300EC5870 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				2F065E61283AE60200EC5870 /* AppAppearance.swift */,
+				2F065E63283AE63800EC5870 /* AppTheme.swift */,
+			);
+			path = Theme;
 			sourceTree = "<group>";
 		};
 		2F7E7B0C28313FE50063C0A9 = {
@@ -222,6 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				2F7E7B1828313FE50063C0A9 /* AppDelegate.swift */,
+				2F065E60283AE5E300EC5870 /* Theme */,
 				2F065E35283995B600EC5870 /* Routing */,
 				2F065E2D283991B900EC5870 /* Configuration */,
 				2F065E27283983E200EC5870 /* Coordinator */,
@@ -233,6 +337,7 @@
 		2F7E7B2D283141890063C0A9 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				2F065E54283AB7CA00EC5870 /* Common */,
 				2F065E3E2839A83000EC5870 /* Utils */,
 				2F065E302839952A00EC5870 /* FoodShaker */,
 			);
@@ -251,6 +356,7 @@
 		2F7E7B2F283141A70063C0A9 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				2F065E412839B07C00EC5870 /* UseCases */,
 				2F065E1A2839745000EC5870 /* Repository */,
 				2F7E7B50283302310063C0A9 /* Network */,
 			);
@@ -389,6 +495,7 @@
 			files = (
 				2F7E7B2528313FE80063C0A9 /* LaunchScreen.storyboard in Resources */,
 				2F065E3D2839A7B400EC5870 /* FoodShakerViewController.xib in Resources */,
+				2F065E59283AB7F900EC5870 /* InfoView.xib in Resources */,
 				2F7E7B33283141DE0063C0A9 /* Localizable.strings in Resources */,
 				2F7E7B2228313FE80063C0A9 /* Assets.xcassets in Resources */,
 			);
@@ -401,18 +508,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F065E5F283AE3DD00EC5870 /* GradientView.swift in Sources */,
 				2F7E7B5B283309C60063C0A9 /* DataTransferService.swift in Sources */,
+				2F065E5B283ABD5000EC5870 /* NibDesignable.swift in Sources */,
+				2F065E62283AE60200EC5870 /* AppAppearance.swift in Sources */,
+				2F065E462839B27900EC5870 /* FoodShakeViewModel.swift in Sources */,
 				2F7E7B552833027E0063C0A9 /* FoodProductRequestDTO.swift in Sources */,
+				2F065E51283A826800EC5870 /* UIViewController+Alert.swift in Sources */,
+				2F065E53283A83C700EC5870 /* Localization.swift in Sources */,
 				2F065E29283983EC00EC5870 /* AppCoordinator.swift in Sources */,
 				2F065E37283995C100EC5870 /* AppRouter.swift in Sources */,
 				2F065E1228396FC100EC5870 /* FoodProductRepository.swift in Sources */,
 				2F065E392839968E00EC5870 /* FoodShakerAssembly.swift in Sources */,
 				2F7E7B42283151E10063C0A9 /* Endpoint.swift in Sources */,
 				2F7E7B1928313FE50063C0A9 /* AppDelegate.swift in Sources */,
+				2F065E4A283A761D00EC5870 /* UIView+Animations.swift in Sources */,
 				2F7E7B3D28314D5C0063C0A9 /* NetworkServiceImpl.swift in Sources */,
 				2F065E402839A83900EC5870 /* UIViewController+NIb.swift in Sources */,
 				2F065E0E283969DC00EC5870 /* NetworkLoggerImpl.swift in Sources */,
 				2F7E7B3B2831486F0063C0A9 /* NetworkConfigurable.swift in Sources */,
+				2F065E56283AB7EC00EC5870 /* InfoView.swift in Sources */,
 				2F065E2F283992F400EC5870 /* FoodShakerCoordinator.swift in Sources */,
 				2F065E17283971E100EC5870 /* FoodProduct.swift in Sources */,
 				2F7E7B57283302CA0063C0A9 /* FoodProductResponseDTO.swift in Sources */,
@@ -422,13 +537,18 @@
 				2F7E7B37283145520063C0A9 /* NetworkService.swift in Sources */,
 				2F7E7B40283151110063C0A9 /* NetworkConfig.swift in Sources */,
 				2F065E2328397B5C00EC5870 /* AppConfiguration.swift in Sources */,
+				2F065E64283AE63800EC5870 /* AppTheme.swift in Sources */,
 				2F7E7B592833063A0063C0A9 /* JSONResponseDecoder.swift in Sources */,
 				2F065E19283973D900EC5870 /* Cancellable.swift in Sources */,
+				2F065E4C283A7B6400EC5870 /* UIView+Layer.swift in Sources */,
 				2F7E7B39283148020063C0A9 /* Requestable.swift in Sources */,
 				2F065E262839825900EC5870 /* AppAssembly.swift in Sources */,
+				2F065E66283AF6B400EC5870 /* UIView+Gradient.swift in Sources */,
 				2F065E342839954E00EC5870 /* FoodShakerViewController.swift in Sources */,
+				2F065E482839BBA000EC5870 /* Observable.swift in Sources */,
 				2F065E0C2839690400EC5870 /* NetworkLogger.swift in Sources */,
 				2F7E7B5F28330EFF0063C0A9 /* NetworkSessionManagerImpl.swift in Sources */,
+				2F065E432839B0A200EC5870 /* FoodShakeUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -571,8 +691,9 @@
 				INFOPLIST_FILE = LS/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -597,8 +718,9 @@
 				INFOPLIST_FILE = LS/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

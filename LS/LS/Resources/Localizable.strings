@@ -5,3 +5,24 @@
   Created by Viachaslau Kastsechka on 5/15/22.
   
 */
+
+// Alert
+
+"alert.error" = "Error";
+"alert.ok" = "Ok";
+
+// Food
+
+"food.carbs" = "carbs";
+"food.protein" = "protein";
+"food.fat" = "fat";
+
+"food.caloriesPerSaving" = "Calories per saving";
+
+// Button
+
+"button.moreInfo" = "MORE INFO";
+
+// Common
+
+"tip.shake" = "Shake the device to get a product";

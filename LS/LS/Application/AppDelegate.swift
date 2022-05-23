@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let rootViewController = UINavigationController()
         window?.rootViewController = rootViewController
 
+        AppAppearance.setupAppearance()
 
         appCoordinator = AppCoordinator(appAssembly: AppAssembly(),
                                         appRouter: AppRouterImpl(navigationController: rootViewController))
