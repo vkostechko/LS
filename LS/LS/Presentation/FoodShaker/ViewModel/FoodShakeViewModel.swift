@@ -100,10 +100,10 @@ private extension FoodShakeViewModel {
 
         foodName.value = food.title
 
-        calories.value = food.calories.stringValue
-        carbs.value = food.carbs.stringValue
-        protein.value = food.protein.stringValue
-        fat.value = food.fat.stringValue
+        calories.value = food.calories.formattedValue
+        carbs.value = food.carbs.formattedValue
+        protein.value = food.protein.formattedValue
+        fat.value = food.fat.formattedValue
 
         colors.value = getRandomGradient()
     }
@@ -117,7 +117,12 @@ private extension FoodShakeViewModel {
 // MARK: - Double to string
 
 extension Double {
-    var stringValue: String? {
-        String(self)
+    var formattedValue: String? {
+
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.maximumFractionDigits = 2
+
+        return formatter.string(from: NSNumber(value: self))
     }
 }
