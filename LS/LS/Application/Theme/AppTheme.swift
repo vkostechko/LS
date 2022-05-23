@@ -118,15 +118,15 @@ struct AppTheme {
 
     enum Fonts {
         static func large() -> UIFont {
-            font(of: 25.0)
+            font(of: 40.0)
         }
 
         static func medium() -> UIFont {
-            font(of: 20.0)
+            font(of: 25.0)
         }
 
         static func small() -> UIFont {
-            font(of: 16.0)
+            font(of: 20.0)
         }
 
         private static func font(of size: CGFloat) -> UIFont {

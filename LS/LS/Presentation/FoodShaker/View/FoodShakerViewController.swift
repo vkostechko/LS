@@ -68,7 +68,7 @@ class FoodShakerViewController: UIViewController {
     private func prepareUI() {
         var theme = AppTheme()
 
-        infoView.titleLabel.font = theme.titleFont
+        infoView.titleLabel.font = theme.subTitleFont
         infoView.titleLabel.textColor = theme.titleTextColor
         infoView.spacing = 6.0
 
@@ -92,7 +92,7 @@ class FoodShakerViewController: UIViewController {
         caloriesSubtitleLabel.font = theme.subTitleFont
         caloriesSubtitleLabel.textColor = theme.subTitleTextColor
 
-        moreButton.titleLabel?.font = theme.titleFont
+        moreButton.titleLabel?.font = theme.subTitleFont
         moreButton.tintColor = theme.titleTextColor
         moreButton.applyGradient(colors: theme.buttonGradient)
 
