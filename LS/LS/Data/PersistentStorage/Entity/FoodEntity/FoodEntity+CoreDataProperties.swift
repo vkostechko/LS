@@ -2,7 +2,7 @@
 //  FoodEntity+CoreDataProperties.swift
 //  LS
 //
-//  Created by Viachaslau Kastsechka on 5/24/22.
+//  Created by Viachaslau Kastsechka on 5/25/22.
 //
 //
 
@@ -31,6 +31,7 @@ extension FoodEntity {
     @NSManaged public var sugar: Double
     @NSManaged public var title: String
     @NSManaged public var unsaturatedFat: Double
+    @NSManaged public var historyItem: HistoryEntity?
 
 }
 

@@ -1,18 +1,11 @@
 //
-//  FoodEntity+CoreDataClass.swift
+//  FoodEntity+Mapping.swift
 //  LS
 //
-//  Created by Viachaslau Kastsechka on 5/24/22.
-//
+//  Created by Viachaslau Kastsechka on 5/25/22.
 //
 
-import Foundation
 import CoreData
-
-@objc(FoodEntity)
-public class FoodEntity: NSManagedObject {
-
-}
 
 // MARK: - Domain
 

@@ -16,8 +16,14 @@
         <attribute name="sugar" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="title" attributeType="String"/>
         <attribute name="unsaturatedFat" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="historyItem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="HistoryEntity" inverseName="foodEntity" inverseEntity="HistoryEntity"/>
+    </entity>
+    <entity name="HistoryEntity" representedClassName="HistoryEntity" syncable="YES">
+        <attribute name="shakeDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="foodEntity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FoodEntity" inverseName="historyItem" inverseEntity="FoodEntity"/>
     </entity>
     <elements>
-        <element name="FoodEntity" positionX="-63" positionY="-18" width="128" height="254"/>
+        <element name="FoodEntity" positionX="-63" positionY="-18" width="128" height="269"/>
+        <element name="HistoryEntity" positionX="-54" positionY="108" width="128" height="59"/>
     </elements>
 </model>
