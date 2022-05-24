@@ -10,9 +10,11 @@ import Foundation
 public final class FoodProductRepositoryImpl {
 
     private let dataTransferService: DataTransferService
+    private let storage: FoodStorage
 
-    public init(dataTransferService: DataTransferService) {
+    init(dataTransferService: DataTransferService, storage: FoodStorage) {
         self.dataTransferService = dataTransferService
+        self.storage = storage
     }
 }
 
@@ -22,14 +24,36 @@ extension FoodProductRepositoryImpl: FoodProductRepository {
 
     @discardableResult
     func fetchProduct(id: ProductId,
+                      cached: @escaping (FoodProduct) -> Void,
                       completion: @escaping (Result<FoodProduct, Error>) -> Void) -> Cancellable? {
 
+        let task = RepositoryTask()
         let requestDTO = FoodProductRequestDTO(foodId: id)
-        let endpoint = APIEndpoints.getFoodProduct(with: requestDTO)
+        storage.getResponse(for: requestDTO) { [weak self] result in
+            guard let self = self else { return }
 
-        return dataTransferService.request(with: endpoint) { result in
+            if case let .success(responseDTO?) = result {
+                cached(responseDTO.toDomain())
+            }
+
+            guard !task.isCancelled else { return }
+
+            task.networkTask = self.fetchProduct(requestDTO: requestDTO,
+                                                 completion: completion) as? NetworkCancellable
+        }
+
+        return task
+    }
+
+    private func fetchProduct(requestDTO: FoodProductRequestDTO,
+                              completion:  @escaping (Result<FoodProduct, Error>) -> Void) -> Cancellable? {
+        let endpoint = APIEndpoints.getFoodProduct(with: requestDTO)
+        return dataTransferService.request(with: endpoint) { [weak self] result in
+            guard let self = self else { return }
+
             switch result {
             case .success(let responseDTO):
+                self.storage.save(response: responseDTO.response, for: requestDTO)
                 completion(.success(responseDTO.toDomain()))
 
             case .failure(let error):

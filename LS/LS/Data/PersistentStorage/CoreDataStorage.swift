@@ -7,6 +7,11 @@
 
 import CoreData
 
+enum CoreDataStorageError: Error {
+    case readError(Error)
+    case saveError(Error)
+}
+
 final class CoreDataStorage {
 
     static let shared = CoreDataStorage()
@@ -26,7 +31,7 @@ final class CoreDataStorage {
         return container
     }()
 
-    func saveContext() {
+    public func saveContext() {
         let context = persistentContainer.viewContext
         if context.hasChanges {
             do {
@@ -36,5 +41,9 @@ final class CoreDataStorage {
                 assertionFailure("CoreDataStorage Unresolved error \(error), \((error as NSError).userInfo)")
             }
         }
+    }
+
+    public func performBackgroundTask(_ block: @escaping (NSManagedObjectContext) -> Void) {
+        persistentContainer.performBackgroundTask(block)
     }
 }

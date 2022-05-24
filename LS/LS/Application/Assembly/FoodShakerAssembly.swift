@@ -15,6 +15,8 @@ final class FoodShakerAssembly {
 
     private let dependencies: Dependencies
 
+    lazy var foodStorage: FoodStorage = { FoodStorageImpl() }()
+
     init(dependencies: Dependencies) {
         self.dependencies = dependencies
     }
@@ -30,7 +32,8 @@ extension FoodShakerAssembly: FoodShakerCoordinatorDependencies {
     func makeFoodShakerViewController() -> FoodShakerViewController {
         let vc = FoodShakerViewController.loadFromNib()
 
-        let repository = FoodProductRepositoryImpl(dataTransferService: dependencies.dataTransferService)
+        let repository = FoodProductRepositoryImpl(dataTransferService: dependencies.dataTransferService,
+                                                   storage: foodStorage)
         let useCase = ShakeProductUseCaseImpl(repository: repository)
         vc.viewModel = FoodShakeViewModel(useCase: useCase)
 
