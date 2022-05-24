@@ -13,5 +13,6 @@ protocol FoodProductRepository {
 
     @discardableResult
     func fetchProduct(id: ProductId,
+                      cached: @escaping (FoodProduct) -> Void,
                       completion: @escaping (Result<FoodProduct, Error>) -> Void) -> Cancellable?
 }

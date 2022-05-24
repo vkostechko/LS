@@ -23,3 +23,5 @@ struct FoodProduct {
     let unsaturatedFat: Double
     let saturatedFat: Double
 }
+
+extension FoodProduct: Equatable {}

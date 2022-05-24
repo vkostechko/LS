@@ -65,7 +65,10 @@ extension FoodShakeViewModel {
     }
 
     func didShakeDevice() {
-        loadingTask = useCase.getRandomProduct { [weak self] result in
+        loadingTask = useCase.getRandomProduct(cached: { [weak self] food in
+            self?.food = food
+
+        }, completion: { [weak self] result in
             guard let self = self else { return }
 
             defer {
@@ -74,12 +77,14 @@ extension FoodShakeViewModel {
 
             switch result {
             case .success(let food):
-                self.food = food
+                if self.food != food {
+                    self.food = food
+                }
 
             case .failure(let error):
                 self.handle(error: error)
             }
-        }
+        })
     }
 }
 
