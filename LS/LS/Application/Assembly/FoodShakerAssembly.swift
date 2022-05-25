@@ -29,14 +29,25 @@ final class FoodShakerAssembly {
 // MARK: - FoodShakerCoordinatorDependencies
 
 extension FoodShakerAssembly: FoodShakerCoordinatorDependencies {
-    func makeFoodShakerViewController() -> FoodShakerViewController {
+    
+    func makeFoodShakerViewController(actions: FoodShakeViewModelActions?) -> FoodShakerViewController {
         let vc = FoodShakerViewController.loadFromNib()
 
         let repository = FoodProductRepositoryImpl(dataTransferService: dependencies.dataTransferService,
                                                    storage: foodStorage)
         let useCase = ShakeProductUseCaseImpl(repository: repository)
-        vc.viewModel = FoodShakeViewModel(useCase: useCase)
+        vc.viewModel = FoodShakeViewModel(useCase: useCase, actions: actions)
 
+        return vc
+    }
+
+    func makeFoodDetailsViewController() -> FoodDetailsViewController {
+        let vc = FoodDetailsViewController.loadFromNib()
+        return vc
+    }
+
+    func makeHistoryViewController() -> HistoryViewController {
+        let vc = HistoryViewController.loadFromNib()
         return vc
     }
 }

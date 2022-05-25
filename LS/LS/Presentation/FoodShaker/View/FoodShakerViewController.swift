@@ -64,7 +64,11 @@ class FoodShakerViewController: UIViewController {
     // MARK: - Actions
 
     @IBAction func moreButtonDidTap(_ sender: Any) {
+        viewModel.didTapDetailsButton()
+    }
 
+    @IBAction func historyButtonDidTap(_ sender: Any) {
+        viewModel.didTapHistoryButton()
     }
 
     // MARK: - Private
@@ -157,6 +161,10 @@ class FoodShakerViewController: UIViewController {
         viewModel.colors.observe(on: self) { [weak self] colors in
             self?.mainInfoContainerView.colors = colors
         }
+
+        viewModel.hasHistory.observe(on: self) { [weak self] hasHitory in
+            self?.updateHistoryButton(hasHistory: hasHitory)
+        }
     }
 }
 
@@ -197,5 +205,33 @@ private extension FoodShakerViewController {
 
     func showError(_ error: String?) {
         showError(message: error)
+    }
+}
+
+// MARK: - History
+
+private extension FoodShakerViewController {
+
+    func updateHistoryButton(hasHistory: Bool?) {
+        if hasHistory ?? false {
+            showHistoryButton()
+        } else {
+            hideHistoryButton()
+        }
+    }
+
+    func showHistoryButton() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "icHistory"),
+                                                            style: .plain,
+                                                            target: self,
+                                                            action: #selector(historyButtonDidTap(sender:)))
+    }
+
+    func hideHistoryButton() {
+        navigationItem.rightBarButtonItem = nil
+    }
+
+    @objc func historyButtonDidTap(sender: Any) {
+        viewModel.didTapDetailsButton()
     }
 }

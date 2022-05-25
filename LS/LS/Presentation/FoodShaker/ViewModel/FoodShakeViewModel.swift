@@ -7,6 +7,11 @@
 
 import UIKit
 
+struct FoodShakeViewModelActions {
+    let showDetails: (FoodProduct) -> Void
+    let showHistory: () -> Void
+}
+
 final class FoodShakeViewModel {
 
     let tip = L10n("tip.shake")
@@ -37,6 +42,8 @@ final class FoodShakeViewModel {
 
     let moreButtonTitle = L10n("button.moreInfo")
 
+    var hasHistory: Observable<Bool?> = Observable(nil)
+
     private var food: FoodProduct? {
         didSet {
             triggerUpdate()
@@ -50,9 +57,11 @@ final class FoodShakeViewModel {
     }
 
     private let useCase: FoodShakeUseCase
+    private let actions: FoodShakeViewModelActions?
 
-    init(useCase: FoodShakeUseCase) {
+    init(useCase: FoodShakeUseCase, actions: FoodShakeViewModelActions?) {
         self.useCase = useCase
+        self.actions = actions
     }
 }
 
@@ -86,6 +95,16 @@ extension FoodShakeViewModel {
             }
         })
     }
+
+    func didTapDetailsButton() {
+        if let food = food {
+            actions?.showDetails(food)
+        }
+    }
+
+    func didTapHistoryButton() {
+        actions?.showHistory()
+    }
 }
 
 // MARK: - Private
@@ -99,6 +118,7 @@ private extension FoodShakeViewModel {
     func triggerUpdate() {
         defer {
             isDataLoaded.value = food != nil
+            hasHistory.value = food != nil
         }
 
         guard let food = food else { return }

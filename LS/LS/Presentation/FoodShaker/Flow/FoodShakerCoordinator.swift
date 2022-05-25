@@ -8,7 +8,9 @@
 import UIKit
 
 protocol FoodShakerCoordinatorDependencies  {
-    func makeFoodShakerViewController() -> FoodShakerViewController
+    func makeFoodShakerViewController(actions: FoodShakeViewModelActions?) -> FoodShakerViewController
+    func makeFoodDetailsViewController() -> FoodDetailsViewController
+    func makeHistoryViewController() -> HistoryViewController
 }
 
 final class FoodShakerCoordinator {
@@ -22,7 +24,19 @@ final class FoodShakerCoordinator {
     }
 
     func start() {
-        let vc = dependencies.makeFoodShakerViewController()
+        let actions = FoodShakeViewModelActions(showDetails: showMovieDetails(foodProduct:),
+                                                showHistory: showHistory)
+        let vc = dependencies.makeFoodShakerViewController(actions: actions)
+        router.show(vc)
+    }
+
+    private func showMovieDetails(foodProduct: FoodProduct) {
+        let vc = dependencies.makeFoodDetailsViewController()
+        router.show(vc)
+    }
+
+    private func showHistory() {
+        let vc = dependencies.makeHistoryViewController()
         router.show(vc)
     }
 }
