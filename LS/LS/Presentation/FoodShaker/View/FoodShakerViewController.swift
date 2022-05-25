@@ -46,6 +46,10 @@ class FoodShakerViewController: UIViewController {
         updateSubviewsLayout()
     }
 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .darkContent
+    }
+
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         super.motionEnded(motion, with: event)
 
