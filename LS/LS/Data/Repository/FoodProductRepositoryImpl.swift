@@ -53,8 +53,12 @@ extension FoodProductRepositoryImpl: FoodProductRepository {
 
             switch result {
             case .success(let responseDTO):
-                self.storage.save(response: responseDTO.response, for: requestDTO)
-                completion(.success(responseDTO.toDomain()))
+                let foodProductDTO = responseDTO.response
+                self.storage.save(response: foodProductDTO, for: requestDTO) {
+                    self.storage.add(response: foodProductDTO, toHostoryFor: requestDTO)
+
+                    completion(.success(responseDTO.toDomain()))
+                }
 
             case .failure(let error):
                 completion(.failure(error))

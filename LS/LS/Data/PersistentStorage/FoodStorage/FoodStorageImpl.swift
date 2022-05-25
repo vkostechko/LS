@@ -25,8 +25,7 @@ extension FoodStorageImpl: FoodStorage {
                      completion: @escaping (Result<FoodProductDTO?, CoreDataStorageError>) -> Void) {
         coreDataStorage.performBackgroundTask { context in
             do {
-                let fetchRequest = self.fetchRequest(for: request)
-                let requestEntity = try context.fetch(fetchRequest).first
+                let requestEntity = try self.fetchFoodEntity(for: request, in: context)
 
                 completion(.success(requestEntity?.toDTO()))
             } catch {
@@ -35,13 +34,38 @@ extension FoodStorageImpl: FoodStorage {
         }
     }
 
-    func save(response: FoodProductDTO, for request: FoodProductRequestDTO) {
+    func save(response: FoodProductDTO, for request: FoodProductRequestDTO, completion: @escaping () -> Void) {
         coreDataStorage.performBackgroundTask { context in
             do {
                 self.deleteEntity(for: request, in: context)
                 let entity = response.toEntity(in: context)
                 entity.foodId = request.foodId
                 try context.save()
+                completion()
+            } catch {
+                print(error)
+                completion()
+            }
+        }
+    }
+
+    func add(response: FoodProductDTO, toHostoryFor request: FoodProductRequestDTO) {
+        coreDataStorage.performBackgroundTask { context in
+            do {
+                let historyFetchRequest = HistoryEntity.fetchRequest()
+                historyFetchRequest.predicate = NSPredicate(format: "%K == %d", #keyPath(HistoryEntity.foodEntity.foodId), request.foodId)
+                historyFetchRequest.fetchLimit = 1
+
+                var historyEntity = try context.fetch(historyFetchRequest).first
+                if historyEntity == nil {
+                    historyEntity = HistoryEntity(context: context)
+                    historyEntity?.foodEntity = try self.fetchFoodEntity(for: request, in: context)
+                }
+
+                historyEntity?.shakeDate = Date()
+
+                try context.save()
+
             } catch {
                 print(error)
             }
@@ -51,7 +75,7 @@ extension FoodStorageImpl: FoodStorage {
 
 // MARK: - Private
 
-extension FoodStorageImpl {
+private extension FoodStorageImpl {
 
     func fetchRequest(for request: FoodProductRequestDTO) -> NSFetchRequest<FoodEntity> {
         let fetchRequest = FoodEntity.fetchRequest()
@@ -60,13 +84,18 @@ extension FoodStorageImpl {
     }
 
     func deleteEntity(for request: FoodProductRequestDTO, in context: NSManagedObjectContext) {
-        let request = fetchRequest(for: request)
         do {
-            if let result = try context.fetch(request).first {
+            if let result = try self.fetchFoodEntity(for: request, in: context) {
                 context.delete(result)
             }
         } catch {
             print(error)
         }
+    }
+
+    func fetchFoodEntity(for request: FoodProductRequestDTO, in context: NSManagedObjectContext) throws -> FoodEntity? {
+        let fetchRequest = fetchRequest(for: request)
+        fetchRequest.fetchLimit = 1
+        return try context.fetch(fetchRequest).first
     }
 }
