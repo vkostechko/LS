@@ -58,6 +58,9 @@
 		2F065EC7283EFE4100EC5870 /* HistoryEntity+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F065EC6283EFE4100EC5870 /* HistoryEntity+Mapping.swift */; };
 		2F065EC9283F01D000EC5870 /* HistoryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F065EC8283F01D000EC5870 /* HistoryUseCase.swift */; };
 		2F065ECD283F02CF00EC5870 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F065ECC283F02CF00EC5870 /* HistoryViewModel.swift */; };
+		2F065ED0283FC8FF00EC5870 /* HistoryItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F065ECE283FC8FF00EC5870 /* HistoryItemCell.swift */; };
+		2F065ED1283FC8FF00EC5870 /* HistoryItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F065ECF283FC8FF00EC5870 /* HistoryItemCell.xib */; };
+		2F065ED3283FD86800EC5870 /* HistoryItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F065ED2283FD86800EC5870 /* HistoryItemViewModel.swift */; };
 		2F7E7B1928313FE50063C0A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7E7B1828313FE50063C0A9 /* AppDelegate.swift */; };
 		2F7E7B2228313FE80063C0A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F7E7B2128313FE80063C0A9 /* Assets.xcassets */; };
 		2F7E7B2528313FE80063C0A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F7E7B2328313FE80063C0A9 /* LaunchScreen.storyboard */; };
@@ -129,6 +132,9 @@
 		2F065EC6283EFE4100EC5870 /* HistoryEntity+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HistoryEntity+Mapping.swift"; sourceTree = "<group>"; };
 		2F065EC8283F01D000EC5870 /* HistoryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryUseCase.swift; sourceTree = "<group>"; };
 		2F065ECC283F02CF00EC5870 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
+		2F065ECE283FC8FF00EC5870 /* HistoryItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItemCell.swift; sourceTree = "<group>"; };
+		2F065ECF283FC8FF00EC5870 /* HistoryItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryItemCell.xib; sourceTree = "<group>"; };
+		2F065ED2283FD86800EC5870 /* HistoryItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItemViewModel.swift; sourceTree = "<group>"; };
 		2F7E7B1528313FE50063C0A9 /* LS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F7E7B1828313FE50063C0A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F7E7B2128313FE80063C0A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -428,6 +434,7 @@
 			isa = PBXGroup;
 			children = (
 				2F065ECC283F02CF00EC5870 /* HistoryViewModel.swift */,
+				2F065ED2283FD86800EC5870 /* HistoryItemViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -437,6 +444,8 @@
 			children = (
 				2F065EB6283EF78E00EC5870 /* HistoryViewController.swift */,
 				2F065EB7283EF78E00EC5870 /* HistoryViewController.xib */,
+				2F065ECE283FC8FF00EC5870 /* HistoryItemCell.swift */,
+				2F065ECF283FC8FF00EC5870 /* HistoryItemCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -652,6 +661,7 @@
 				2F065E59283AB7F900EC5870 /* InfoView.xib in Resources */,
 				2F065EBD283EF79F00EC5870 /* FoodDetailsViewController.xib in Resources */,
 				2F7E7B33283141DE0063C0A9 /* Localizable.strings in Resources */,
+				2F065ED1283FC8FF00EC5870 /* HistoryItemCell.xib in Resources */,
 				2F7E7B2228313FE80063C0A9 /* Assets.xcassets in Resources */,
 				2F065EB9283EF78E00EC5870 /* HistoryViewController.xib in Resources */,
 			);
@@ -691,6 +701,7 @@
 				2F7E7B3D28314D5C0063C0A9 /* NetworkServiceImpl.swift in Sources */,
 				2F065EC7283EFE4100EC5870 /* HistoryEntity+Mapping.swift in Sources */,
 				2F065E402839A83900EC5870 /* UIViewController+NIb.swift in Sources */,
+				2F065ED3283FD86800EC5870 /* HistoryItemViewModel.swift in Sources */,
 				2F065E6A283B09D100EC5870 /* Model.xcdatamodeld in Sources */,
 				2F065E0E283969DC00EC5870 /* NetworkLoggerImpl.swift in Sources */,
 				2F065E9D283D992700EC5870 /* FoodEntity+CoreDataProperties.swift in Sources */,
@@ -699,6 +710,7 @@
 				2F065E2F283992F400EC5870 /* FoodShakerCoordinator.swift in Sources */,
 				2F065E89283D802400EC5870 /* FoodStorageImpl.swift in Sources */,
 				2F065E17283971E100EC5870 /* FoodProduct.swift in Sources */,
+				2F065ED0283FC8FF00EC5870 /* HistoryItemCell.swift in Sources */,
 				2F7E7B57283302CA0063C0A9 /* FoodProductResponseDTO.swift in Sources */,
 				2F7E7B522833023D0063C0A9 /* APIEndpoints.swift in Sources */,
 				2F7E7B5D28330A3D0063C0A9 /* DataTransferServiceImpl.swift in Sources */,

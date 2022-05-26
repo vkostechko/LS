@@ -9,6 +9,8 @@ import UIKit
 
 class HistoryViewController: UIViewController {
 
+    @IBOutlet private weak var collectionView: UICollectionView!
+
     var viewModel: HistoryViewModel!
 
     // MARK: - Lifecycle
@@ -24,8 +26,53 @@ class HistoryViewController: UIViewController {
     // MARK: - Private
 
     private func prepareUI() {
+        collectionView.register(UINib(nibName: String(describing: HistoryItemCell.self), bundle: nil),
+                                forCellWithReuseIdentifier: HistoryItemCell.reuseIdentifier)
+        collectionView.dataSource = self
+        collectionView.delegate = self
     }
 
     private func bind(to viewModel: HistoryViewModel) {
+        viewModel.itemsCount.observe(on: self) { [weak self] count in
+            self?.reloadData()
+        }
     }
+}
+
+// MARK: - Data
+
+private extension HistoryViewController {
+
+    func reloadData() {
+        collectionView.reloadData()
+    }
+ }
+
+// MARK: - UICollectionViewDataSourse
+
+extension HistoryViewController: UICollectionViewDataSource {
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        viewModel.itemsCount.value
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+        let reuseIdentifier = HistoryItemCell.reuseIdentifier
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier,
+                                                            for: indexPath) as? HistoryItemCell
+        else {
+            fatalError("Can not dequeue cell with id: \(reuseIdentifier)")
+        }
+
+        cell.viewModel = viewModel.historyItemViewModel(at: indexPath)
+
+        return cell
+    }
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+
+extension HistoryViewController: UICollectionViewDelegateFlowLayout {
 }

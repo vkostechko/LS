@@ -6,8 +6,12 @@
 //
 
 import Foundation
+import UIKit
 
 final class HistoryViewModel {
+
+    private(set) var itemsCount: Observable<Int> = Observable(0)
+    private(set) var items: Observable<[HistoryItemViewModel]?> = Observable(nil)
 
     private let useCase: HistoryUseCase
 
@@ -34,11 +38,23 @@ final class HistoryViewModel {
             }
         }
     }
+
+    func historyItemViewModel(at indexPath: IndexPath) -> HistoryItemViewModel? {
+        guard historyItem != nil,
+              items.value?.count ?? 0 > indexPath.row
+        else {
+            return nil
+        }
+
+        return items.value?[indexPath.row]
+    }
 }
 
 private extension HistoryViewModel {
 
     func triggerUpdate() {
 
+        items.value = historyItem?.items.compactMap { HistoryItemViewModel(food: $0) }
+        itemsCount.value = items.value?.count ?? 0
     }
 }
