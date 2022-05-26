@@ -16,8 +16,10 @@
 "food.carbs" = "carbs";
 "food.protein" = "protein";
 "food.fat" = "fat";
+"food.fatPercent" = "% of fat is unsaturated";
 
 "food.caloriesPerSaving" = "Calories per saving";
+"food.calsPerSaving" = "cals / saving";
 
 // Button
 

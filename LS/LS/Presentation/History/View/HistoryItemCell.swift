@@ -16,7 +16,13 @@ class HistoryItemCell: UICollectionViewCell {
 
     static let reuseIdentifier = "HistoryItemCell"
 
-    var viewModel: HistoryItemViewModel?
+    var viewModel: HistoryItemViewModel? {
+        didSet {
+            if let viewModel = viewModel {
+                bind(viewModel: viewModel)
+            }
+        }
+    }
 
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -24,8 +30,17 @@ class HistoryItemCell: UICollectionViewCell {
         progressView.roundCorners(8.0)
     }
 
-    func bind(viewModel: HistoryItemViewModel) {
-        self.viewModel = viewModel
-        
+    private func bind(viewModel: HistoryItemViewModel) {
+        viewModel.foodName.observe(on: self) { [weak self] value in
+            self?.foodNameLabel.text = value
+        }
+
+        viewModel.calories.observe(on: self) { [weak self] value in
+            self?.caloriesInfoLabel.text = value
+        }
+
+        viewModel.fat.observe(on: self) { [weak self] value in
+            self?.fatInfoLabel.text = value
+        }
     }
 }
