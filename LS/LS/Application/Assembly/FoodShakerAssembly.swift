@@ -48,6 +48,11 @@ extension FoodShakerAssembly: FoodShakerCoordinatorDependencies {
 
     func makeHistoryViewController() -> HistoryViewController {
         let vc = HistoryViewController.loadFromNib()
+        
+        let repository = HistoryRepositoryImpl(storage: foodStorage)
+        let useCase = HistoryUseCaseImpl(repository: repository)
+        vc.viewModel = HistoryViewModel(useCase: useCase)
+
         return vc
     }
 }

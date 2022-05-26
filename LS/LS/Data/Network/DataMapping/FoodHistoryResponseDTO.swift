@@ -19,7 +19,7 @@ struct FoodHistoryDTO {
 extension FoodHistoryResponseDTO {
 
     func toDomain() -> HistoryItem {
-        HistoryItem(item: items.compactMap { $0.toDomain() })
+        HistoryItem(items: items.compactMap { $0.toDomain() })
     }
 }
 

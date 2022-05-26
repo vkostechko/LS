@@ -8,5 +8,5 @@
 import Foundation
 
 struct HistoryItem {
-    let item: [FoodProduct]
+    let items: [FoodProduct]
 }

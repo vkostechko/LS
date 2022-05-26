@@ -67,10 +67,6 @@ class FoodShakerViewController: UIViewController {
         viewModel.didTapDetailsButton()
     }
 
-    @IBAction func historyButtonDidTap(_ sender: Any) {
-        viewModel.didTapHistoryButton()
-    }
-
     // MARK: - Private
 
     private func prepareUI() {
@@ -232,6 +228,6 @@ private extension FoodShakerViewController {
     }
 
     @objc func historyButtonDidTap(sender: Any) {
-        viewModel.didTapDetailsButton()
+        viewModel.didTapHistoryButton()
     }
 }
