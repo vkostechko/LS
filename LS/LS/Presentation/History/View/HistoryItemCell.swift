@@ -25,6 +25,11 @@ class HistoryItemCell: UICollectionViewCell {
         }
     }
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        prepareUI()
+    }
+
     override func layoutSubviews() {
         super.layoutSubviews()
 
@@ -48,5 +53,10 @@ class HistoryItemCell: UICollectionViewCell {
         viewModel.colors.observe(on: self) { [weak self] colors in
             self?.containerView.colors = colors
         }
+    }
+
+    private func prepareUI() {
+        progressView.layer.borderWidth = 1.0
+        progressView.layer.borderColor = UIColor.white.cgColor
     }
 }

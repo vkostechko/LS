@@ -13,6 +13,8 @@ class HistoryViewController: UIViewController {
 
     var viewModel: HistoryViewModel!
 
+    let flowLayoutDelegate = PagingFlowLayout(cellWitdhPercentage: 0.8, distanceBetweenCells: 16.0)
+
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -29,7 +31,9 @@ class HistoryViewController: UIViewController {
         collectionView.register(UINib(nibName: String(describing: HistoryItemCell.self), bundle: nil),
                                 forCellWithReuseIdentifier: HistoryItemCell.reuseIdentifier)
         collectionView.dataSource = self
-        collectionView.delegate = self
+        collectionView.delegate = flowLayoutDelegate
+        collectionView.isPagingEnabled = false
+        collectionView.showsHorizontalScrollIndicator = false
     }
 
     private func bind(to viewModel: HistoryViewModel) {
@@ -70,9 +74,4 @@ extension HistoryViewController: UICollectionViewDataSource {
 
         return cell
     }
-}
-
-// MARK: - UICollectionViewDelegateFlowLayout
-
-extension HistoryViewController: UICollectionViewDelegateFlowLayout {
 }

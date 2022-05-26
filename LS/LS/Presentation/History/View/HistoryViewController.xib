@@ -21,10 +21,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="hRF-GG-efY">
-                    <rect key="frame" x="0.0" y="310" width="414" height="276"/>
+                    <rect key="frame" x="0.0" y="326" width="414" height="244"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="hRF-GG-efY" secondAttribute="height" multiplier="1.5:1" id="6Uw-kH-iRK"/>
+                        <constraint firstAttribute="width" secondItem="hRF-GG-efY" secondAttribute="height" multiplier="1.7:1" id="6Uw-kH-iRK"/>
                     </constraints>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="spI-26-Efb">
                         <size key="itemSize" width="128" height="128"/>

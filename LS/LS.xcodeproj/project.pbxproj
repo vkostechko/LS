@@ -61,6 +61,7 @@
 		2F065ED0283FC8FF00EC5870 /* HistoryItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F065ECE283FC8FF00EC5870 /* HistoryItemCell.swift */; };
 		2F065ED1283FC8FF00EC5870 /* HistoryItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F065ECF283FC8FF00EC5870 /* HistoryItemCell.xib */; };
 		2F065ED3283FD86800EC5870 /* HistoryItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F065ED2283FD86800EC5870 /* HistoryItemViewModel.swift */; };
+		2F065ED728402D1C00EC5870 /* PagingFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F065ED628402D1C00EC5870 /* PagingFlowLayout.swift */; };
 		2F7E7B1928313FE50063C0A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7E7B1828313FE50063C0A9 /* AppDelegate.swift */; };
 		2F7E7B2228313FE80063C0A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F7E7B2128313FE80063C0A9 /* Assets.xcassets */; };
 		2F7E7B2528313FE80063C0A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F7E7B2328313FE80063C0A9 /* LaunchScreen.storyboard */; };
@@ -135,6 +136,7 @@
 		2F065ECE283FC8FF00EC5870 /* HistoryItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItemCell.swift; sourceTree = "<group>"; };
 		2F065ECF283FC8FF00EC5870 /* HistoryItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryItemCell.xib; sourceTree = "<group>"; };
 		2F065ED2283FD86800EC5870 /* HistoryItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItemViewModel.swift; sourceTree = "<group>"; };
+		2F065ED628402D1C00EC5870 /* PagingFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingFlowLayout.swift; sourceTree = "<group>"; };
 		2F7E7B1528313FE50063C0A9 /* LS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F7E7B1828313FE50063C0A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F7E7B2128313FE80063C0A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -325,6 +327,7 @@
 				2F065E5A283ABD5000EC5870 /* NibDesignable.swift */,
 				2F065E5E283AE3DD00EC5870 /* GradientView.swift */,
 				2F065E57283AB7F200EC5870 /* InfoView */,
+				2F065ED628402D1C00EC5870 /* PagingFlowLayout.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -703,6 +706,7 @@
 				2F065E402839A83900EC5870 /* UIViewController+NIb.swift in Sources */,
 				2F065ED3283FD86800EC5870 /* HistoryItemViewModel.swift in Sources */,
 				2F065E6A283B09D100EC5870 /* Model.xcdatamodeld in Sources */,
+				2F065ED728402D1C00EC5870 /* PagingFlowLayout.swift in Sources */,
 				2F065E0E283969DC00EC5870 /* NetworkLoggerImpl.swift in Sources */,
 				2F065E9D283D992700EC5870 /* FoodEntity+CoreDataProperties.swift in Sources */,
 				2F7E7B3B2831486F0063C0A9 /* NetworkConfigurable.swift in Sources */,

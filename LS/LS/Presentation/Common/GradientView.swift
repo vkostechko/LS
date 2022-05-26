@@ -15,6 +15,11 @@ class GradientView: UIView {
         }
     }
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        updateGradient()
+    }
+
     private var gradientLayer: CAGradientLayer?
 
     private func updateGradient() {
