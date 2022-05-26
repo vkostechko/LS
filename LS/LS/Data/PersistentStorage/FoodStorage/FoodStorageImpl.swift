@@ -71,6 +71,25 @@ extension FoodStorageImpl: FoodStorage {
             }
         }
     }
+
+    func getHistory(completion: @escaping (Result<FoodHistoryResponseDTO?, CoreDataStorageError>) -> Void) {
+        coreDataStorage.performBackgroundTask { context in
+            do {
+                let fetchRequest = HistoryEntity.fetchRequest()
+                let sortDescriptor = NSSortDescriptor(key: #keyPath(HistoryEntity.shakeDate),
+                                                      ascending: true)
+                fetchRequest.sortDescriptors = [sortDescriptor]
+
+                let items = try context.fetch(fetchRequest)
+                let response =  FoodHistoryResponseDTO(items: items.map { $0.toDTO() })
+                completion(.success(response))
+
+            } catch {
+                print(error)
+                completion(.failure(CoreDataStorageError.readError(error)))
+            }
+        }
+    }
 }
 
 // MARK: - Private

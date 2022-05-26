@@ -13,4 +13,5 @@ protocol FoodStorage {
     func save(response: FoodProductDTO, for request: FoodProductRequestDTO, completion: @escaping () -> Void)
 
     func add(response: FoodProductDTO, toHostoryFor request: FoodProductRequestDTO)
+    func getHistory(completion: @escaping (Result<FoodHistoryResponseDTO?, CoreDataStorageError>) -> Void)
 }

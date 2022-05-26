@@ -26,8 +26,9 @@ extension FoodEntity {
                        unsaturatedFat: unsaturatedFat,
                        saturatedFat: saturatedFat)
     }
-
 }
+
+// MARK: - Storage
 
 extension FoodProductDTO {
 
