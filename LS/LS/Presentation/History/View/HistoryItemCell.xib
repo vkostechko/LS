@@ -18,7 +18,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="381" height="208"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mcp-Xd-EXZ">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mcp-Xd-EXZ" customClass="GradientView" customModule="LS" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="381" height="208"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uaa-VQ-2HX">
@@ -102,6 +102,7 @@
             <size key="customSize" width="381" height="208"/>
             <connections>
                 <outlet property="caloriesInfoLabel" destination="CSd-pu-SbW" id="LhW-kJ-Nsf"/>
+                <outlet property="containerView" destination="Mcp-Xd-EXZ" id="xC1-L9-uL4"/>
                 <outlet property="fatInfoLabel" destination="q11-HB-L8b" id="a8n-UN-57h"/>
                 <outlet property="foodNameLabel" destination="nY1-Lr-ge2" id="v5I-LV-O1c"/>
                 <outlet property="progressView" destination="3Rq-PE-wjv" id="vBr-cp-XDg"/>

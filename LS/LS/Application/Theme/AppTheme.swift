@@ -150,4 +150,9 @@ struct AppTheme {
 
     lazy var tipTextColor: UIColor = { AppColors.blackTop.color }()
     lazy var tipBackgroundColor: UIColor = { AppColors.zircon.color }()
+
+    static func getRandomGradient() -> [UIColor] {
+        let id = Int.random(in: 0..<AppTheme.Gradient.allCases.count)
+        return AppTheme.Gradient.allCases[id].colors
+    }
 }

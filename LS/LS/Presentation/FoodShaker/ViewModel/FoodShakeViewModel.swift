@@ -130,12 +130,7 @@ private extension FoodShakeViewModel {
         protein.value = food.protein.formattedValue
         fat.value = food.fat.formattedValue
 
-        colors.value = getRandomGradient()
-    }
-
-    func getRandomGradient() -> [UIColor] {
-        let id = Int.random(in: 0..<AppTheme.Gradient.allCases.count)
-        return AppTheme.Gradient.allCases[id].colors
+        colors.value = AppTheme.getRandomGradient() 
     }
 }
 

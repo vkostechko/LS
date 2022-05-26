@@ -5,13 +5,14 @@
 //  Created by Viachaslau Kastsechka on 5/26/22.
 //
 
-import Foundation
+import UIKit
 
 struct HistoryItemViewModel {
     private(set) var foodName: Observable<String?> = Observable(nil)
     private(set) var calories: Observable<String?> = Observable(nil)
     private(set) var progress: Observable<Double> = Observable(0)
     private(set) var fat: Observable<String?> = Observable(nil)
+    private(set) var colors: Observable<[UIColor]?> = Observable(nil)
 
     private let food: FoodProduct
 
@@ -23,6 +24,8 @@ struct HistoryItemViewModel {
         let fatPercent = food.fat / 100.0
         progress.value = fatPercent
         fat.value = "\(food.fat)\(L10n("food.fatPercent"))"
+
+        colors.value = AppTheme.getRandomGradient()
     }
 
 }

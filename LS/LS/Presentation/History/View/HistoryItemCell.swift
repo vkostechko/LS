@@ -13,6 +13,7 @@ class HistoryItemCell: UICollectionViewCell {
     @IBOutlet private weak var caloriesInfoLabel: UILabel!
     @IBOutlet private weak var progressView: UIView!
     @IBOutlet private weak var fatInfoLabel: UILabel!
+    @IBOutlet private weak var containerView: GradientView!
 
     static let reuseIdentifier = "HistoryItemCell"
 
@@ -28,6 +29,7 @@ class HistoryItemCell: UICollectionViewCell {
         super.layoutSubviews()
 
         progressView.roundCorners(8.0)
+        containerView.roundCorners(16.0)
     }
 
     private func bind(viewModel: HistoryItemViewModel) {
@@ -41,6 +43,10 @@ class HistoryItemCell: UICollectionViewCell {
 
         viewModel.fat.observe(on: self) { [weak self] value in
             self?.fatInfoLabel.text = value
+        }
+
+        viewModel.colors.observe(on: self) { [weak self] colors in
+            self?.containerView.colors = colors
         }
     }
 }
