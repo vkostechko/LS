@@ -25,6 +25,10 @@ class HistoryViewController: UIViewController {
         viewModel.viewDidLoad()
     }
 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .darkContent
+    }
+    
     // MARK: - Private
 
     private func prepareUI() {
