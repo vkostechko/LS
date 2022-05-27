@@ -45,7 +45,7 @@ class ProgressView: NibDesignable {
     override func layoutSubviews() {
         super.layoutSubviews()
 
-        let cornerRadius = bounds.height / 2.0
+        let cornerRadius = bounds.height / 3.0
 
         layer.cornerRadius = cornerRadius
         layer.masksToBounds = true
