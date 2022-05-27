@@ -11,7 +11,7 @@ class HistoryItemCell: UICollectionViewCell {
 
     @IBOutlet private weak var foodNameLabel: UILabel!
     @IBOutlet private weak var caloriesInfoLabel: UILabel!
-    @IBOutlet private weak var progressView: UIView!
+    @IBOutlet private weak var progressView: ProgressView!
     @IBOutlet private weak var fatInfoLabel: UILabel!
     @IBOutlet private weak var containerView: GradientView!
 
@@ -32,8 +32,7 @@ class HistoryItemCell: UICollectionViewCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-
-        progressView.roundCorners(8.0)
+        
         containerView.roundCorners(16.0)
     }
 
@@ -50,8 +49,13 @@ class HistoryItemCell: UICollectionViewCell {
             self?.fatInfoLabel.text = value
         }
 
+        viewModel.progress.observe(on: self) { [weak self] progress in
+            self?.progressView.progress = Float(progress)
+        }
+
         viewModel.colors.observe(on: self) { [weak self] colors in
             self?.containerView.colors = colors
+            self?.progressView.progressColor = colors?.last?.lighter()
         }
     }
 

@@ -33,7 +33,7 @@
                                 <color key="textColor" name="white"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Rq-PE-wjv">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Rq-PE-wjv" customClass="ProgressView" customModule="LS" customModuleProvider="target">
                                 <rect key="frame" x="57" y="104" width="267" height="30"/>
                                 <color key="backgroundColor" systemColor="systemCyanColor"/>
                                 <constraints>
