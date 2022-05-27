@@ -55,8 +55,9 @@ class ProgressView: NibDesignable {
     }
 
     private func updateIndicatorView(animated: Bool = true) {
+        let indicatorWidth = bounds.width * CGFloat(progress)
         UIView.animate(withDuration: animated ? 0.3 : 0) {
-            self.indicatorTrailingConstraint.constant = self.bounds.width * CGFloat(1.0 - (self.progress * 10))
+            self.indicatorTrailingConstraint.constant = self.bounds.width - indicatorWidth
             self.layoutIfNeeded()
         }
     }

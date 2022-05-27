@@ -129,7 +129,7 @@ struct AppTheme {
             font(of: 20.0)
         }
 
-        private static func font(of size: CGFloat) -> UIFont {
+        static func font(of size: CGFloat) -> UIFont {
             UIFont.systemFont(ofSize: size)
         }
     }

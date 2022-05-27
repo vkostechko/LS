@@ -10,8 +10,8 @@ import UIKit
 struct HistoryItemViewModel {
     private(set) var foodName: Observable<String?> = Observable(nil)
     private(set) var calories: Observable<String?> = Observable(nil)
-    private(set) var progress: Observable<Double> = Observable(0)
-    private(set) var fat: Observable<String?> = Observable(nil)
+    private(set) var saturatedFatRate: Observable<Double> = Observable(0)
+    private(set) var unsaturatedFatPercent: Observable<String?> = Observable(nil)
     private(set) var colors: Observable<[UIColor]?> = Observable(nil)
 
     private let food: FoodProduct
@@ -21,9 +21,8 @@ struct HistoryItemViewModel {
 
         foodName.value = food.title
         calories.value = "\(food.calories) \(L10n("food.calsPerSaving"))"
-        let fatPercent = food.fat / 100.0
-        progress.value = fatPercent
-        fat.value = "\(food.fat)\(L10n("food.fatPercent"))"
+        saturatedFatRate.value = food.saturatedFat
+        unsaturatedFatPercent.value = "\(food.unsaturatedFat)\(L10n("food.unsaturatedFatPercent"))"
 
         colors.value = AppTheme.getRandomGradient()
     }

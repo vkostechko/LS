@@ -45,12 +45,12 @@ class HistoryItemCell: UICollectionViewCell {
             self?.caloriesInfoLabel.text = value
         }
 
-        viewModel.fat.observe(on: self) { [weak self] value in
+        viewModel.unsaturatedFatPercent.observe(on: self) { [weak self] value in
             self?.fatInfoLabel.text = value
         }
 
-        viewModel.progress.observe(on: self) { [weak self] progress in
-            self?.progressView.progress = Float(progress)
+        viewModel.saturatedFatRate.observe(on: self) { [weak self] saturatedFatRate in
+            self?.progressView.progress = Float(saturatedFatRate)
         }
 
         viewModel.colors.observe(on: self) { [weak self] colors in
@@ -62,5 +62,15 @@ class HistoryItemCell: UICollectionViewCell {
     private func prepareUI() {
         progressView.layer.borderWidth = 1.0
         progressView.layer.borderColor = UIColor.white.cgColor
+
+        var theme = AppTheme()
+
+        foodNameLabel.font = AppTheme.Fonts.font(of: 30)
+        foodNameLabel.textColor = theme.subTitleTextColor
+
+        [caloriesInfoLabel, fatInfoLabel].forEach {
+            $0?.font = AppTheme.Fonts.font(of: 18)
+            $0?.textColor = theme.subTitleTextColor
+        }
     }
 }
