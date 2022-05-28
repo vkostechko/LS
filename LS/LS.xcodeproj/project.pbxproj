@@ -100,6 +100,14 @@
 		2FD9993A2842900C00A254A9 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7E7B41283151E10063C0A9 /* Endpoint.swift */; };
 		2FD9993B2842900D00A254A9 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7E7B41283151E10063C0A9 /* Endpoint.swift */; };
 		2FD9993C2842905900A254A9 /* JSONResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7E7B582833063A0063C0A9 /* JSONResponseDecoder.swift */; };
+		2FD999402842962000A254A9 /* FoodShakeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD9993F2842962000A254A9 /* FoodShakeViewModelTests.swift */; };
+		2FD99943284296B800A254A9 /* FoodShakeUseCaseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD99942284296B800A254A9 /* FoodShakeUseCaseMock.swift */; };
+		2FD99944284296D100A254A9 /* FoodShakeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F065E422839B0A200EC5870 /* FoodShakeUseCase.swift */; };
+		2FD999452842990600A254A9 /* FoodProductRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F065E1128396FC100EC5870 /* FoodProductRepository.swift */; };
+		2FD999462842995200A254A9 /* FoodShakeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F065E452839B27900EC5870 /* FoodShakeViewModel.swift */; };
+		2FD9994728429B0E00A254A9 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F065E472839BBA000EC5870 /* Observable.swift */; };
+		2FD9994828429B1100A254A9 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F065E52283A83C700EC5870 /* Localization.swift */; };
+		2FD9994928429B2100A254A9 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F065E63283AE63800EC5870 /* AppTheme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -197,6 +205,8 @@
 		2FD9992C28427F9C00A254A9 /* NetworkConfigurableMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfigurableMock.swift; sourceTree = "<group>"; };
 		2FD999312842811100A254A9 /* NetworkSessionManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSessionManagerMock.swift; sourceTree = "<group>"; };
 		2FD9993628428DC500A254A9 /* DataTransferServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTransferServiceTests.swift; sourceTree = "<group>"; };
+		2FD9993F2842962000A254A9 /* FoodShakeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodShakeViewModelTests.swift; sourceTree = "<group>"; };
+		2FD99942284296B800A254A9 /* FoodShakeUseCaseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodShakeUseCaseMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -665,6 +675,7 @@
 		2FD9991828427AAB00A254A9 /* LSTests */ = {
 			isa = PBXGroup;
 			children = (
+				2FD9993D284295E000A254A9 /* Presentation */,
 				2FD9992428427DEC00A254A9 /* Infrastructure */,
 				2FD9992028427BDB00A254A9 /* Mocks */,
 			);
@@ -703,6 +714,31 @@
 				2FD9992928427E4200A254A9 /* EndpointMock.swift */,
 				2FD9992C28427F9C00A254A9 /* NetworkConfigurableMock.swift */,
 				2FD999312842811100A254A9 /* NetworkSessionManagerMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		2FD9993D284295E000A254A9 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				2FD9993E2842960700A254A9 /* FoodShaker */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		2FD9993E2842960700A254A9 /* FoodShaker */ = {
+			isa = PBXGroup;
+			children = (
+				2FD99941284296AB00A254A9 /* Mocks */,
+				2FD9993F2842962000A254A9 /* FoodShakeViewModelTests.swift */,
+			);
+			path = FoodShaker;
+			sourceTree = "<group>";
+		};
+		2FD99941284296AB00A254A9 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				2FD99942284296B800A254A9 /* FoodShakeUseCaseMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -890,9 +926,14 @@
 				2FD9992E28427FB700A254A9 /* NetworkConfigurable.swift in Sources */,
 				2FD999352842836A00A254A9 /* Cancellable.swift in Sources */,
 				2FD9993728428DC500A254A9 /* DataTransferServiceTests.swift in Sources */,
+				2FD9994928429B2100A254A9 /* AppTheme.swift in Sources */,
+				2FD999402842962000A254A9 /* FoodShakeViewModelTests.swift in Sources */,
 				2FD9992B28427E9B00A254A9 /* Requestable.swift in Sources */,
+				2FD99944284296D100A254A9 /* FoodShakeUseCase.swift in Sources */,
+				2FD9994828429B1100A254A9 /* Localization.swift in Sources */,
 				2FD9993928428F6A00A254A9 /* DataTransferService.swift in Sources */,
 				2FD9992F2842809B00A254A9 /* NetworkService.swift in Sources */,
+				2FD999462842995200A254A9 /* FoodShakeViewModel.swift in Sources */,
 				2FD9992A28427E4200A254A9 /* EndpointMock.swift in Sources */,
 				2FD99930284280DF00A254A9 /* NetworkServiceImpl.swift in Sources */,
 				2FD9992328427C1700A254A9 /* FoodProduct.swift in Sources */,
@@ -900,9 +941,12 @@
 				2FD9993828428F6500A254A9 /* DataTransferServiceImpl.swift in Sources */,
 				2FD9993C2842905900A254A9 /* JSONResponseDecoder.swift in Sources */,
 				2FD9992D28427F9C00A254A9 /* NetworkConfigurableMock.swift in Sources */,
+				2FD9994728429B0E00A254A9 /* Observable.swift in Sources */,
 				2FD999322842811100A254A9 /* NetworkSessionManagerMock.swift in Sources */,
 				2FD9992728427E0E00A254A9 /* NetworkServiceTests.swift in Sources */,
+				2FD99943284296B800A254A9 /* FoodShakeUseCaseMock.swift in Sources */,
 				2FD9992228427BE700A254A9 /* FoodProduct+Mock.swift in Sources */,
+				2FD999452842990600A254A9 /* FoodProductRepository.swift in Sources */,
 				2FD9993B2842900D00A254A9 /* Endpoint.swift in Sources */,
 				2FD999332842830E00A254A9 /* NetworkLogger.swift in Sources */,
 			);

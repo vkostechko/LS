@@ -12,7 +12,7 @@ struct FoodShakeViewModelActions {
     let showHistory: () -> Void
 }
 
-final class FoodShakeViewModel {
+final public class FoodShakeViewModel {
 
     let tip = L10n("tip.shake")
     var tipStatus: Observable<TipStatus?> = Observable(nil)
@@ -67,7 +67,7 @@ final class FoodShakeViewModel {
 
 // MARK: - Actions
 
-extension FoodShakeViewModel {
+public extension FoodShakeViewModel {
 
     func viewDidAppear() {
         tipStatus.value = food == nil ? .animating : .hidden
