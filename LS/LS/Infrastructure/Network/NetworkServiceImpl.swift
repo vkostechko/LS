@@ -13,7 +13,10 @@ public final class NetworkServiceImpl {
     private let sessionManager: NetworkSessionManager
     private let logger: NetworkLogger
 
-    public init(config: NetworkConfigurable, sessionManager: NetworkSessionManager, logger: NetworkLogger) {
+    public init(config: NetworkConfigurable,
+                sessionManager: NetworkSessionManager,
+                logger: NetworkLogger) {
+        
         self.config = config
         self.sessionManager = sessionManager
         self.logger = logger
@@ -23,6 +26,8 @@ public final class NetworkServiceImpl {
 // MARK: - NetworkService
 
 extension NetworkServiceImpl: NetworkService {
+
+    @discardableResult
     public func request(endpoint: Requestable,
                         completion: @escaping CompletionHandler) -> NetworkCancellable? {
         do {
