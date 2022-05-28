@@ -73,7 +73,6 @@
 		2F7E7B3B2831486F0063C0A9 /* NetworkConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7E7B3A2831486F0063C0A9 /* NetworkConfigurable.swift */; };
 		2F7E7B3D28314D5C0063C0A9 /* NetworkServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7E7B3C28314D5C0063C0A9 /* NetworkServiceImpl.swift */; };
 		2F7E7B40283151110063C0A9 /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7E7B3F283151110063C0A9 /* NetworkConfig.swift */; };
-		2F7E7B42283151E10063C0A9 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7E7B41283151E10063C0A9 /* Endpoint.swift */; };
 		2F7E7B522833023D0063C0A9 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7E7B512833023D0063C0A9 /* APIEndpoints.swift */; };
 		2F7E7B552833027E0063C0A9 /* FoodProductRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7E7B542833027E0063C0A9 /* FoodProductRequestDTO.swift */; };
 		2F7E7B57283302CA0063C0A9 /* FoodProductResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7E7B56283302CA0063C0A9 /* FoodProductResponseDTO.swift */; };
@@ -95,6 +94,12 @@
 		2FD999332842830E00A254A9 /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F065E0B2839690400EC5870 /* NetworkLogger.swift */; };
 		2FD999342842835D00A254A9 /* NetworkLoggerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F065E0D283969DC00EC5870 /* NetworkLoggerImpl.swift */; };
 		2FD999352842836A00A254A9 /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F065E18283973D900EC5870 /* Cancellable.swift */; };
+		2FD9993728428DC500A254A9 /* DataTransferServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD9993628428DC500A254A9 /* DataTransferServiceTests.swift */; };
+		2FD9993828428F6500A254A9 /* DataTransferServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7E7B5C28330A3D0063C0A9 /* DataTransferServiceImpl.swift */; };
+		2FD9993928428F6A00A254A9 /* DataTransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7E7B5A283309C60063C0A9 /* DataTransferService.swift */; };
+		2FD9993A2842900C00A254A9 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7E7B41283151E10063C0A9 /* Endpoint.swift */; };
+		2FD9993B2842900D00A254A9 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7E7B41283151E10063C0A9 /* Endpoint.swift */; };
+		2FD9993C2842905900A254A9 /* JSONResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7E7B582833063A0063C0A9 /* JSONResponseDecoder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -191,6 +196,7 @@
 		2FD9992928427E4200A254A9 /* EndpointMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointMock.swift; sourceTree = "<group>"; };
 		2FD9992C28427F9C00A254A9 /* NetworkConfigurableMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfigurableMock.swift; sourceTree = "<group>"; };
 		2FD999312842811100A254A9 /* NetworkSessionManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSessionManagerMock.swift; sourceTree = "<group>"; };
+		2FD9993628428DC500A254A9 /* DataTransferServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTransferServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -686,6 +692,7 @@
 			children = (
 				2FD9992828427E3400A254A9 /* Mocks */,
 				2FD9992628427E0E00A254A9 /* NetworkServiceTests.swift */,
+				2FD9993628428DC500A254A9 /* DataTransferServiceTests.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -829,7 +836,6 @@
 				2F065E1228396FC100EC5870 /* FoodProductRepository.swift in Sources */,
 				2F065E392839968E00EC5870 /* FoodShakerAssembly.swift in Sources */,
 				2F065EC5283EFC4200EC5870 /* FoodHistoryResponseDTO.swift in Sources */,
-				2F7E7B42283151E10063C0A9 /* Endpoint.swift in Sources */,
 				2F7E7B1928313FE50063C0A9 /* AppDelegate.swift in Sources */,
 				2F065E4A283A761D00EC5870 /* UIView+Animations.swift in Sources */,
 				2F7E7B3D28314D5C0063C0A9 /* NetworkServiceImpl.swift in Sources */,
@@ -872,6 +878,7 @@
 				2F065E482839BBA000EC5870 /* Observable.swift in Sources */,
 				2F065E0C2839690400EC5870 /* NetworkLogger.swift in Sources */,
 				2F7E7B5F28330EFF0063C0A9 /* NetworkSessionManagerImpl.swift in Sources */,
+				2FD9993A2842900C00A254A9 /* Endpoint.swift in Sources */,
 				2F065E432839B0A200EC5870 /* FoodShakeUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -882,16 +889,21 @@
 			files = (
 				2FD9992E28427FB700A254A9 /* NetworkConfigurable.swift in Sources */,
 				2FD999352842836A00A254A9 /* Cancellable.swift in Sources */,
+				2FD9993728428DC500A254A9 /* DataTransferServiceTests.swift in Sources */,
 				2FD9992B28427E9B00A254A9 /* Requestable.swift in Sources */,
+				2FD9993928428F6A00A254A9 /* DataTransferService.swift in Sources */,
 				2FD9992F2842809B00A254A9 /* NetworkService.swift in Sources */,
 				2FD9992A28427E4200A254A9 /* EndpointMock.swift in Sources */,
 				2FD99930284280DF00A254A9 /* NetworkServiceImpl.swift in Sources */,
 				2FD9992328427C1700A254A9 /* FoodProduct.swift in Sources */,
 				2FD999342842835D00A254A9 /* NetworkLoggerImpl.swift in Sources */,
+				2FD9993828428F6500A254A9 /* DataTransferServiceImpl.swift in Sources */,
+				2FD9993C2842905900A254A9 /* JSONResponseDecoder.swift in Sources */,
 				2FD9992D28427F9C00A254A9 /* NetworkConfigurableMock.swift in Sources */,
 				2FD999322842811100A254A9 /* NetworkSessionManagerMock.swift in Sources */,
 				2FD9992728427E0E00A254A9 /* NetworkServiceTests.swift in Sources */,
 				2FD9992228427BE700A254A9 /* FoodProduct+Mock.swift in Sources */,
+				2FD9993B2842900D00A254A9 /* Endpoint.swift in Sources */,
 				2FD999332842830E00A254A9 /* NetworkLogger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
