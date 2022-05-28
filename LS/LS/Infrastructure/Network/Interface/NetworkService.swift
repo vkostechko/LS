@@ -22,6 +22,7 @@ extension URLSessionTask: NetworkCancellable { }
 public protocol NetworkService {
     typealias CompletionHandler = (Result<Data?, NetworkError>) -> Void
 
+    @discardableResult
     func request(endpoint: Requestable,
                  completion: @escaping CompletionHandler) -> NetworkCancellable?
 }

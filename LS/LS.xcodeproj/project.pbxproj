@@ -84,6 +84,17 @@
 		2FD9991228413EDE00A254A9 /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD9991128413EDE00A254A9 /* UIColor+Utils.swift */; };
 		2FD9992228427BE700A254A9 /* FoodProduct+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD9992128427BE700A254A9 /* FoodProduct+Mock.swift */; };
 		2FD9992328427C1700A254A9 /* FoodProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F065E16283971E100EC5870 /* FoodProduct.swift */; };
+		2FD9992728427E0E00A254A9 /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD9992628427E0E00A254A9 /* NetworkServiceTests.swift */; };
+		2FD9992A28427E4200A254A9 /* EndpointMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD9992928427E4200A254A9 /* EndpointMock.swift */; };
+		2FD9992B28427E9B00A254A9 /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7E7B38283148020063C0A9 /* Requestable.swift */; };
+		2FD9992D28427F9C00A254A9 /* NetworkConfigurableMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD9992C28427F9C00A254A9 /* NetworkConfigurableMock.swift */; };
+		2FD9992E28427FB700A254A9 /* NetworkConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7E7B3A2831486F0063C0A9 /* NetworkConfigurable.swift */; };
+		2FD9992F2842809B00A254A9 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7E7B36283145520063C0A9 /* NetworkService.swift */; };
+		2FD99930284280DF00A254A9 /* NetworkServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7E7B3C28314D5C0063C0A9 /* NetworkServiceImpl.swift */; };
+		2FD999322842811100A254A9 /* NetworkSessionManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD999312842811100A254A9 /* NetworkSessionManagerMock.swift */; };
+		2FD999332842830E00A254A9 /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F065E0B2839690400EC5870 /* NetworkLogger.swift */; };
+		2FD999342842835D00A254A9 /* NetworkLoggerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F065E0D283969DC00EC5870 /* NetworkLoggerImpl.swift */; };
+		2FD999352842836A00A254A9 /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F065E18283973D900EC5870 /* Cancellable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -176,6 +187,10 @@
 		2FD9991128413EDE00A254A9 /* UIColor+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
 		2FD9991728427AAB00A254A9 /* LSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FD9992128427BE700A254A9 /* FoodProduct+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoodProduct+Mock.swift"; sourceTree = "<group>"; };
+		2FD9992628427E0E00A254A9 /* NetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
+		2FD9992928427E4200A254A9 /* EndpointMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointMock.swift; sourceTree = "<group>"; };
+		2FD9992C28427F9C00A254A9 /* NetworkConfigurableMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfigurableMock.swift; sourceTree = "<group>"; };
+		2FD999312842811100A254A9 /* NetworkSessionManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSessionManagerMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -644,6 +659,7 @@
 		2FD9991828427AAB00A254A9 /* LSTests */ = {
 			isa = PBXGroup;
 			children = (
+				2FD9992428427DEC00A254A9 /* Infrastructure */,
 				2FD9992028427BDB00A254A9 /* Mocks */,
 			);
 			path = LSTests;
@@ -653,6 +669,33 @@
 			isa = PBXGroup;
 			children = (
 				2FD9992128427BE700A254A9 /* FoodProduct+Mock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		2FD9992428427DEC00A254A9 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				2FD9992528427DF800A254A9 /* Network */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		2FD9992528427DF800A254A9 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				2FD9992828427E3400A254A9 /* Mocks */,
+				2FD9992628427E0E00A254A9 /* NetworkServiceTests.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		2FD9992828427E3400A254A9 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				2FD9992928427E4200A254A9 /* EndpointMock.swift */,
+				2FD9992C28427F9C00A254A9 /* NetworkConfigurableMock.swift */,
+				2FD999312842811100A254A9 /* NetworkSessionManagerMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -837,8 +880,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FD9992E28427FB700A254A9 /* NetworkConfigurable.swift in Sources */,
+				2FD999352842836A00A254A9 /* Cancellable.swift in Sources */,
+				2FD9992B28427E9B00A254A9 /* Requestable.swift in Sources */,
+				2FD9992F2842809B00A254A9 /* NetworkService.swift in Sources */,
+				2FD9992A28427E4200A254A9 /* EndpointMock.swift in Sources */,
+				2FD99930284280DF00A254A9 /* NetworkServiceImpl.swift in Sources */,
 				2FD9992328427C1700A254A9 /* FoodProduct.swift in Sources */,
+				2FD999342842835D00A254A9 /* NetworkLoggerImpl.swift in Sources */,
+				2FD9992D28427F9C00A254A9 /* NetworkConfigurableMock.swift in Sources */,
+				2FD999322842811100A254A9 /* NetworkSessionManagerMock.swift in Sources */,
+				2FD9992728427E0E00A254A9 /* NetworkServiceTests.swift in Sources */,
 				2FD9992228427BE700A254A9 /* FoodProduct+Mock.swift in Sources */,
+				2FD999332842830E00A254A9 /* NetworkLogger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
